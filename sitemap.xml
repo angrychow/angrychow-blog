@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://angrychow.github.io/angrychow-blog/2023/01/21/intro/</loc>
+    
+    <lastmod>2023-01-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://angrychow.github.io/angrychow-blog/2023/01/21/Win32%20GUI%20%E7%BC%96%E7%A8%8B%201.1%20intro/</loc>
     
     <lastmod>2022-10-07</lastmod>
