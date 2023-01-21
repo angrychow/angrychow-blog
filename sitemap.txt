@@ -1,2 +1,3 @@
 https://angrychow.github.io/angrychow-blog/2023/01/21/hello-world/
+https://angrychow.github.io/angrychow-blog/about/index.html
 https://angrychow.github.io/angrychow-blog
