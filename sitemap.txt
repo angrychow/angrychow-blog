@@ -1,4 +1,8 @@
+https://angrychow.github.io/angrychow-blog/2023/01/21/Tech%20Stack%20%E8%AE%B0%E5%BD%95/
+https://angrychow.github.io/angrychow-blog/2023/01/21/csapp-%E6%9F%90%E5%B9%B4%E6%9C%9F%E6%9C%AB-%E5%8F%82%E8%80%83/
 https://angrychow.github.io/angrychow-blog/2023/01/21/Win32-GUI-%E7%BC%96%E7%A8%8B-%E5%90%88%E9%9B%86/
 https://angrychow.github.io/angrychow-blog/about/index.html
 https://angrychow.github.io/angrychow-blog
 https://angrychow.github.io/angrychow-blog/tags/GUI/
+https://angrychow.github.io/angrychow-blog/tags/History/
+https://angrychow.github.io/angrychow-blog/tags/CSAPP/
