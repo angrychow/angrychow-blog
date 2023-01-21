@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "",
+      lightbox: ,
+      animate: ,
+      search: false,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title>  · angrychow 的博客 </title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-01-21</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
+        
+          
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h2 id="Win32-GUI-编程-3-1-常用系统窗口类（标准控件）"><a href="#Win32-GUI-编程-3-1-常用系统窗口类（标准控件）" class="headerlink" title="Win32 GUI 编程 3.1 常用系统窗口类（标准控件）"></a>Win32 GUI 编程 3.1 常用系统窗口类（标准控件）</h2><p>完整文档，请访问：</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/win32/controls/window-controls">https://docs.microsoft.com/en-us/windows/win32/controls/window-controls</a></p>
+<p>提示：找到左边的 Control Library，点进去。</p>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><h4 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h4><p>窗口类标签：Button</p>
+<p>创建一个按钮：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HWND hwndButton = <span class="built_in">CreateWindow</span>(</span><br><span class="line">	<span class="string">L&quot;Button&quot;</span>,</span><br><span class="line">	<span class="string">L&quot;Submit&quot;</span>,</span><br><span class="line">	WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON | WS_VISIBLE,</span><br><span class="line">	<span class="number">200</span>,</span><br><span class="line">	<span class="number">200</span>,</span><br><span class="line">	<span class="number">100</span>,</span><br><span class="line">	<span class="number">50</span>,</span><br><span class="line">	mainWindowHandle,</span><br><span class="line">	(HMENU)<span class="number">1001</span>, <span class="comment">//对于子组件，hmenu的值作为id让父窗口区分</span></span><br><span class="line">	hIns,</span><br><span class="line">	<span class="literal">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>对于子窗口，HMENU 的值可以被父窗口调用。</p>
+<h4 id="事件的监听"><a href="#事件的监听" class="headerlink" title="事件的监听"></a>事件的监听</h4><p>按钮向消息队列中发送 Notification ，收信的是父窗口。</p>
+<p>父窗口监听 WM_COMMAND 事件，以上面代码生成的按钮为例子，此按钮被点击后，生成 WM_COMMAND事件发送给父窗口；</p>
+<p>LOWORD(wParam) &#x3D; 1001 (对于子组件，hmenu的值作为id让父窗口区分)</p>
+<p>HIWORD(wParam) &#x3D; BN_CLICKED</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (msgID) &#123;</span><br><span class="line">	<span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">		<span class="built_in">PostQuitMessage</span>(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> WM_COMMAND:</span><br><span class="line">		<span class="keyword">switch</span> (<span class="built_in">LOWORD</span>(wParam)) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1001</span>:</span><br><span class="line">			<span class="comment">//do something ...</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hWnd, msgID, wParam, lParam);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h3><h4 id="基本属性-1"><a href="#基本属性-1" class="headerlink" title="基本属性"></a>基本属性</h4><p>窗口类标签：ComboBox</p>
+<p>创建一个复选框：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HWND hWndComboBox = <span class="built_in">CreateWindow</span>(</span><br><span class="line">	<span class="built_in">TEXT</span>(<span class="string">&quot;ComboBox&quot;</span>),</span><br><span class="line">	<span class="built_in">TEXT</span>(<span class="string">&quot;&quot;</span>),</span><br><span class="line">	CBS_DROPDOWNLIST | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,</span><br><span class="line">	<span class="number">100</span>,</span><br><span class="line">	<span class="number">100</span>,</span><br><span class="line">	<span class="number">200</span>,</span><br><span class="line">	<span class="number">200</span>,</span><br><span class="line">	mainWindowHandle,</span><br><span class="line">	<span class="literal">NULL</span>,</span><br><span class="line">	hIns,</span><br><span class="line">	<span class="literal">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加选择项"><a href="#添加选择项" class="headerlink" title="添加选择项"></a>添加选择项</h4><p>ComboBox可以通过：（二选一）</p>
+<ul>
+<li>SendMessage 发送CB_ADDSTRING 消息</li>
+<li>调用 ComboBox_AddString 函数（需要 #include&lt;windowsx.h&gt; ）</li>
+</ul>
+<p>这两种方式添加可选择项</p>
+<h4 id="获得目前被选择项"><a href="#获得目前被选择项" class="headerlink" title="获得目前被选择项"></a>获得目前被选择项</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> selectionComboBox = <span class="built_in">SendMessage</span>(g_hWndComboBox, CB_GETCURSEL, <span class="number">0</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p>SendMessage：CB_GETCURSEL。</p>
+<p>返回的是目前被选中的项目的数字编号（第一个被选中返回0，第二个被选中返回1，以此类推）</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;windowsx.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">LPCTSTR labelComboBox[<span class="number">6</span>] = &#123;</span><br><span class="line">	<span class="string">L&quot;巨佬A&quot;</span>,</span><br><span class="line">	<span class="string">L&quot;巨佬B&quot;</span>,</span><br><span class="line">	<span class="string">L&quot;巨佬C&quot;</span>,</span><br><span class="line">	<span class="string">L&quot;巨佬D&quot;</span>,</span><br><span class="line">	<span class="string">L&quot;巨佬E&quot;</span>,</span><br><span class="line">	<span class="string">L&quot;巨佬F&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">HWND g_hWndButtonSubmit = <span class="number">0</span>;</span><br><span class="line">HWND g_hWndComboBox = <span class="number">0</span>;</span><br><span class="line">HANDLE g_console = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">LRESULT CALLBACK <span class="title">WndProc</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">	HWND hWnd,</span></span></span><br><span class="line"><span class="params"><span class="function">	UINT msgID,</span></span></span><br><span class="line"><span class="params"><span class="function">	WPARAM wParam,</span></span></span><br><span class="line"><span class="params"><span class="function">	LPARAM lParam</span></span></span><br><span class="line"><span class="params"><span class="function">)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (msgID) &#123;</span><br><span class="line">	<span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">		<span class="built_in">PostQuitMessage</span>(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> WM_COMMAND:</span><br><span class="line">		<span class="keyword">switch</span> (<span class="built_in">LOWORD</span>(wParam)) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1001</span>:</span><br><span class="line">			<span class="type">int</span> selectionComboBox = <span class="built_in">SendMessage</span>(g_hWndComboBox, CB_GETCURSEL, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">			LPCTSTR showWord = <span class="string">L&quot;you didn&#x27;t choose&quot;</span>;</span><br><span class="line">			<span class="keyword">if</span> (selectionComboBox != CB_ERR)</span><br><span class="line">				showWord = labelComboBox[selectionComboBox];</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">HIWORD</span>(wParam) == BN_CLICKED) &#123;</span><br><span class="line">				<span class="built_in">MessageBox</span>(</span><br><span class="line">					hWnd,</span><br><span class="line">					showWord,</span><br><span class="line">					<span class="string">L&quot;the people you choose is ...&quot;</span>,</span><br><span class="line">					MB_OK</span><br><span class="line">				);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hWnd, msgID, wParam, lParam);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MYWINDOWBUFFER 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MYCLASSBUFFER 100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> CALLBACK <span class="title">WinMain</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">	HINSTANCE hIns, </span></span></span><br><span class="line"><span class="params"><span class="function">	HINSTANCE hPerIns,</span></span></span><br><span class="line"><span class="params"><span class="function">	LPSTR lpCmdLine,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> nCmdShow</span></span></span><br><span class="line"><span class="params"><span class="function">)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">AllocConsole</span>();</span><br><span class="line">	g_console = <span class="built_in">GetStdHandle</span>(STD_OUTPUT_HANDLE);</span><br><span class="line">	WNDCLASS mainWindow = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	mainWindow.cbClsExtra = MYCLASSBUFFER;</span><br><span class="line">	mainWindow.cbWndExtra = MYWINDOWBUFFER;</span><br><span class="line">	mainWindow.hbrBackground = (HBRUSH)(COLOR_WINDOW + <span class="number">1</span>); </span><br><span class="line">	mainWindow.hCursor = <span class="literal">NULL</span>; </span><br><span class="line">	mainWindow.hIcon = <span class="literal">NULL</span>; </span><br><span class="line">	mainWindow.hInstance = hIns;</span><br><span class="line">	mainWindow.lpfnWndProc = WndProc;</span><br><span class="line">	mainWindow.lpszClassName = <span class="built_in">TEXT</span>(<span class="string">&quot;Main&quot;</span>);</span><br><span class="line">	mainWindow.lpszMenuName = <span class="literal">NULL</span>; </span><br><span class="line">	mainWindow.style = CS_HREDRAW | CS_VREDRAW; </span><br><span class="line"></span><br><span class="line">	<span class="built_in">RegisterClass</span>(&amp;mainWindow);</span><br><span class="line"></span><br><span class="line">	HWND mainWindowHandle = <span class="built_in">CreateWindow</span>(</span><br><span class="line">		<span class="built_in">TEXT</span>(<span class="string">&quot;Main&quot;</span>), </span><br><span class="line">		<span class="built_in">TEXT</span>(<span class="string">&quot;Hello World!&quot;</span>), </span><br><span class="line">		WS_OVERLAPPEDWINDOW,</span><br><span class="line">		<span class="number">100</span>, </span><br><span class="line">		<span class="number">100</span>,</span><br><span class="line">		<span class="number">500</span>,</span><br><span class="line">		<span class="number">500</span>,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		hIns,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	HWND hWndComboBox = <span class="built_in">CreateWindow</span>(</span><br><span class="line">		<span class="built_in">TEXT</span>(<span class="string">&quot;ComboBox&quot;</span>),</span><br><span class="line">		<span class="built_in">TEXT</span>(<span class="string">&quot;&quot;</span>),</span><br><span class="line">		CBS_DROPDOWNLIST | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,</span><br><span class="line">		<span class="number">100</span>,</span><br><span class="line">		<span class="number">100</span>,</span><br><span class="line">		<span class="number">200</span>,</span><br><span class="line">		<span class="number">200</span>,</span><br><span class="line">		mainWindowHandle,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		hIns,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line">	g_hWndComboBox = hWndComboBox;</span><br><span class="line"></span><br><span class="line">	HWND hwndButton = <span class="built_in">CreateWindow</span>(</span><br><span class="line">		<span class="string">L&quot;Button&quot;</span>,</span><br><span class="line">		<span class="string">L&quot;Submit&quot;</span>,</span><br><span class="line">		WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON | WS_VISIBLE,</span><br><span class="line">		<span class="number">200</span>,</span><br><span class="line">		<span class="number">200</span>,</span><br><span class="line">		<span class="number">100</span>,</span><br><span class="line">		<span class="number">50</span>,</span><br><span class="line">		mainWindowHandle,</span><br><span class="line">		(HMENU)<span class="number">1001</span>, <span class="comment">//对于子组件，hmenu的值作为id让父窗口区分</span></span><br><span class="line">		hIns,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line">	g_hWndButtonSubmit = hwndButton;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">		<span class="built_in">ComboBox_AddString</span>(hWndComboBox, labelComboBox[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">ShowWindow</span>(</span><br><span class="line">		mainWindowHandle,</span><br><span class="line">		SW_SHOW</span><br><span class="line">	);</span><br><span class="line">	<span class="built_in">UpdateWindow</span>(mainWindowHandle);</span><br><span class="line"></span><br><span class="line">	MSG msgLoop = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">GetMessage</span>(</span><br><span class="line">		&amp;msgLoop,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="number">0</span>,</span><br><span class="line">		<span class="number">0</span></span><br><span class="line">	)) &#123;</span><br><span class="line">		<span class="built_in">TranslateMessage</span>(&amp;msgLoop);</span><br><span class="line">		<span class="built_in">DispatchMessage</span>(&amp;msgLoop);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    
+    </div>
+    
+    
+      
+
+      
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+    
+      <a href="/angrychow-blog/2023/01/21/Win32%20GUI%20%E7%BC%96%E7%A8%8B%202.2%20%E7%BB%98%E5%9B%BE/" id="art-right" class="art-right">
+        <span class="prev-title">
+          <i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span> ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+  </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/balance.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>
