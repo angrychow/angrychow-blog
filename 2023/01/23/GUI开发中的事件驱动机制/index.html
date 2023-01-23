@@ -21,6 +21,8 @@
 
 
 
+  <meta name="keywords" content="GUI, nlvi" />
+
 
 <link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
 <link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
@@ -83,11 +85,7 @@
 }
 </style>
 
-  <title>
-  
-    归档 · angrychow 的博客
-  
-</title>
+  <title> GUI 开发中的事件驱动机制 · angrychow 的博客 </title>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
 </head>
 <body>
@@ -187,27 +185,28 @@
         <div class="main-wrapper">
           
     
-  <div class="archive syuanpi fadeInRightShort" id="archive">
-    
-      <aside class="archive-title">Total</aside>
-      <span class="archive-num">一共有 4 篇文章</span>
-    
-      
-      
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-01-23</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
         
-          
-          
-            
-            
-            <div class="archive-group">
-            <time class="archive-year"> 2023 </time>
-            <div class="archive-list">
-          
-          
-        <div class="archive-post">
-          <div class="archive-post-content">
-            
-              <h1 id="GUI-开发中的事件驱动机制"><a href="#GUI-开发中的事件驱动机制" class="headerlink" title="GUI 开发中的事件驱动机制"></a>GUI 开发中的事件驱动机制</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>很显然，您手头正在使用的计算机允许你同时运行好几个应用程序，这归功于您手头正在使用的计算机的操作系统支持“并发”（concurrency）。多个应用程序被抽象为多个进程，然后由操作系统来调度这多个进程。每个进程会被操作系统分配一个时间片，即每次被 CPU 选中来执行当前进程所用的时间。由于 CPU 的频率太高，进程之间的切换并不会让用户感到卡顿，所以给人一种“几个应用程序同时在运行”的感觉。</p>
+          GUI 开发中的事件驱动机制
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h1 id="GUI-开发中的事件驱动机制"><a href="#GUI-开发中的事件驱动机制" class="headerlink" title="GUI 开发中的事件驱动机制"></a>GUI 开发中的事件驱动机制</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>很显然，您手头正在使用的计算机允许你同时运行好几个应用程序，这归功于您手头正在使用的计算机的操作系统支持“并发”（concurrency）。多个应用程序被抽象为多个进程，然后由操作系统来调度这多个进程。每个进程会被操作系统分配一个时间片，即每次被 CPU 选中来执行当前进程所用的时间。由于 CPU 的频率太高，进程之间的切换并不会让用户感到卡顿，所以给人一种“几个应用程序同时在运行”的感觉。</p>
 <p>一个进程可以拥有多个线程（Thread），不同的线程完成不同的任务，一个进程中线程之间的调度同样也是分配时间片、切换线程的模式。</p>
 <p>值得强调的是，进程与线程的<strong>调度</strong>是由操作系统进行的。</p>
 <ul>
@@ -242,128 +241,77 @@
 <p>我们可以看到，await&#x2F;async 机制让 JavaScript 用户不感受到自己正在写回调函数，在编写者看来，他们似乎利用 await 阻塞了当前的控制流。然而实际上，后面的代码块是作为回调函数出现的。</p>
 <p>可以说，JS 利用 await&#x2F;async 机制（或者 Promise 链式调用机制），将消息循环（事件驱动机制）和回调屏蔽了，用户可以不和这两个东西打交道。但是理解 JS 的事件驱动机制的原理仍然是很重要的。</p>
 
-            
-          </div>
-          <div class="archive-post-info">
-            <time class="archive-post-time">
-              2023-01-23
-            </time>
-            <a  class="archive-post-link" href="/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/">
-              GUI 开发中的事件驱动机制
-            </a>
-          </div>
-        </div>
       
-        
-          
-          
-          
-        <div class="archive-post">
-          <div class="archive-post-content">
-            
-              <h1 id="个人记录"><a href="#个人记录" class="headerlink" title="个人记录"></a>个人记录</h1><h2 id="2021-年-7月-9月"><a href="#2021-年-7月-9月" class="headerlink" title="2021 年 7月 - 9月"></a>2021 年 7月 - 9月</h2><h3 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h3><ul>
-<li>JAVA 程序设计复习</li>
-<li>JAVA GUI，java.awt 与 java.swing 学习<ul>
-<li>小项目：五子棋</li>
-<li>JAVA 写 GUI 真屎</li>
-</ul>
-</li>
-</ul>
-<h3 id="BUPTCPC-第一年-with-ZYM-amp-XKD"><a href="#BUPTCPC-第一年-with-ZYM-amp-XKD" class="headerlink" title="BUPTCPC - 第一年 with ZYM &amp; XKD"></a>BUPTCPC - 第一年 with ZYM &amp; XKD</h3><ul>
-<li>校赛准备<ul>
-<li>结果：决赛铁牌（😅）</li>
-</ul>
-</li>
-</ul>
-<h3 id="Servlet-技术初探"><a href="#Servlet-技术初探" class="headerlink" title="Servlet 技术初探"></a>Servlet 技术初探</h3><ul>
-<li>java - servlet技术 - tomcat<ul>
-<li>小项目：作业记录CRUD，部署在别人（ZCW）的服务器上</li>
-</ul>
-</li>
-</ul>
-<h2 id="2021-年-10月-11月"><a href="#2021-年-10月-11月" class="headerlink" title="2021 年 10月 - 11月"></a>2021 年 10月 - 11月</h2><h3 id="SSM-框架初探"><a href="#SSM-框架初探" class="headerlink" title="SSM 框架初探"></a>SSM 框架初探</h3><ul>
-<li>字节跳动，后端开发训练营<ul>
-<li>项目：具有安全防护功能的账号系统</li>
-</ul>
-</li>
-</ul>
-            
-          </div>
-          <div class="archive-post-info">
-            <time class="archive-post-time">
-              2023-01-21
-            </time>
-            <a  class="archive-post-link" href="/angrychow-blog/2023/01/21/Tech%20Stack%20%E8%AE%B0%E5%BD%95/">
-              技术经历记录
-            </a>
-          </div>
-        </div>
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
       
-        
-          
-          
-          
-        <div class="archive-post">
-          <div class="archive-post-content">
-            
-              <h2 id="Win32-GUI-编程-1-1-intro"><a href="#Win32-GUI-编程-1-1-intro" class="headerlink" title="Win32 GUI 编程 1.1 intro"></a>Win32 GUI 编程 1.1 intro</h2><h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
-<li>了解什么是回调函数</li>
-<li>了解句柄概念</li>
-</ul>
-<h3 id="窗口创建的过程"><a href="#窗口创建的过程" class="headerlink" title="窗口创建的过程"></a>窗口创建的过程</h3><ul>
-<li>定义 WinMain 函数</li>
-<li>定义窗口处理函数（自定义，消息处理回调）</li>
-<li>向操作系统注册窗口类（向操作系统写入数据）</li>
-<li>创建窗口（内存中创建窗口）</li>
-<li>显示窗口（绘制窗口）</li>
-<li>消息循环（获取、翻译、分发消息）</li>
-<li>消息处理</li>
-</ul>
-            
-          </div>
-          <div class="archive-post-info">
-            <time class="archive-post-time">
-              2023-01-21
-            </time>
-            <a  class="archive-post-link" href="/angrychow-blog/2023/01/21/Win32-GUI-%E7%BC%96%E7%A8%8B-%E5%90%88%E9%9B%86/">
-              Win32 GUI 编程初探合集
-            </a>
-          </div>
-        </div>
+        <a href="/angrychow-blog/tags/GUI/">GUI</a>
       
-        
-          
-          
-          
-        <div class="archive-post">
-          <div class="archive-post-content">
-            
-              <h1 id="CSAPP-期末复习"><a href="#CSAPP-期末复习" class="headerlink" title="CSAPP 期末复习"></a>CSAPP 期末复习</h1><h2 id="CSAPP-某年期末"><a href="#CSAPP-某年期末" class="headerlink" title="CSAPP 某年期末"></a>CSAPP 某年期末</h2><h3 id="判断题-2pts-8-x3D-16pts"><a href="#判断题-2pts-8-x3D-16pts" class="headerlink" title="判断题 2pts * 8&#x3D;16pts"></a>判断题 2pts * 8&#x3D;16pts</h3><p>1-1 <code>(x|-x)&gt;&gt;31 == -1</code> x 的类型是 int</p>
-<p>1-2 UNIX 系统中，文件就是字节序列，每个I&#x2F;O设备都可以看成文件。</p>
-<p>1-3 <code>-1 &lt; 0U</code></p>
-<p>1-4 <code>cmpq (%rax), 6(%rsp)</code></p>
-            
-          </div>
-          <div class="archive-post-info">
-            <time class="archive-post-time">
-              2023-01-21
-            </time>
-            <a  class="archive-post-link" href="/angrychow-blog/2023/01/21/csapp-%E6%9F%90%E5%B9%B4%E6%9C%9F%E6%9C%AB-%E5%8F%82%E8%80%83/">
-              CSAPP 复习用参考资料
-            </a>
-          </div>
-        </div>
+      </div>
+    
+    
       
+
       
-        </section></section>
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>angrychow</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/">https://angrychow.github.io/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog">https://angrychow.github.io/angrychow-blog</a>
+    </div>
+    <div class="copy-license">
       
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
   </div>
+
+    
+  </article>
   
-  <nav class="pagination">
-      <span class="page-number current">1</span>
+    
+  <nav class="article-page">
+    
+    
+      <a href="/angrychow-blog/2023/01/21/Tech%20Stack%20%E8%AE%B0%E5%BD%95/" id="art-right" class="art-right">
+        <span class="prev-title">
+          技术经历记录<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
   </nav>
 
 
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+
+
+  
 
 
         </div>
@@ -510,6 +458,20 @@
 <script src="/angrychow-blog/script/bootstarp.js"></script>
 
 
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
 
 
 
