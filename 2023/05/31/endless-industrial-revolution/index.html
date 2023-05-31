@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="/default-avatar.png">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="/default-avatar.png">
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+  <meta name="keywords" content="Opinion, nlvi" />
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/syuanpi/syuanpi.min.css">
+
+
+
+
+
+    <link rel="icon" href="/default-avatar.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title> 由 ChatGPT 帮我写代码所想到的 · angrychow 的博客 </title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/" id="article">
+        <span class="base-name">
+          
+            ARTICLE
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/archives" id="archives">
+        <span class="base-name">
+          
+            ARCHIVES
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="/angrychow-blog/" >
+            
+              ARTICLE
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="/angrychow-blog/archives" >
+            
+              ARCHIVES
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-05-31</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
+        
+          由 ChatGPT 帮我写代码所想到的
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <p>大二下接近尾声，诸多课设“开发”任务的 Deadline 也开始逼近。java OOP 课程要求写一个聊天系统，我负责写客户端部分。客户端用的是 java swing （一门也许比我年纪还大的技术）进行开发。我翻了翻 Oracle 提供的 java swing 文档 —— 不出意料，我几乎很难看懂上面写的每一个字。于是，我转向 ChatGPT 求助。一开始，我只是向 ChatGPT 问问具体类的成员方法的用处之类的；后来我渐渐发现，只要我输入的 Prompt 足够细致，我可以让 ChatGPT 直接帮我生成一个窗口出来。java OOP 课程还布置了十道需要在 Online Judge 上完成的编程题，ChatGPT 能够直接正确的回答其中的七道题，另外三道题在我稍稍调整后也通过了 Online Judge 的评判。</p>
+<p>就在昨天，我看见一位朋友写的数据结构课程设计的前端页面 —— 在我看来，写的挺像模像样的。本人身边的朋友多数不太喜欢做图形界面开发，所以我一直在“查找”身边的做过客户端或者前端开发的同学。经过一番交谈，我发现这位朋友的前端技术也是“速成”出来的 —— 这位朋友花了大约两个月的时间首先了解了 html，css，js 的一些大致开发功能，之后在 “B 站大学” 学习了一下 vue 框架的运作模式（为什么这些机构不愿意多录制一点 React 的教学视频？React 可比 vue 好学多了），最终，在 GPT 4 老师的帮助下，这位同学迅速形成了一套<strong>可行的，可用的，界面美观的前端页面</strong>。</p>
+<p>这使我感到有一些震惊，虽然我本人也是经常依赖 ChatGPT，可是我没想到 ChatGPT 竟然能使一位没有过前端开发经历的人在这么快的时间内做出来这么一套东西。回想起我第一次开发前端，一路上有无数的挫折……我现在还能想起来，2021 年 12 月，那时的我是多么困惑于 React 中的那个玄妙的“副作用”！（拜 B 站缺少 React Hook 的教学视频所赐！）</p>
+<p>在没有 GPT 的帮助的日子里，我大约花了半年的时间（2022.1 ~ 2022.7）才大概理解了前端开发的一些要点，并且可以自己写出一些功能没那么复杂的网页（还必须有厉害的人能在旁边提点我几句，不然遇到问题就卡壳了）。之后，我又花了半年时间（2022.9~2023.5），理解了 JavaScript 重要的一些语言特性（单线程异步，原型链等），大致了解了一些“大前端”的开发框架（例如 Electron，React Native），又实际上手做了一两个比较完备的前端项目 —— 到这时，我才大概能够独立的开发出一点可以用的前端页面和基于前端工具链的一些应用。</p>
+<p>而现在，有了 ChatGPT，前端开发变得更加的简单了，你都不需要对框架的细节有过多的掌控，你只需要大概的了解这个框架的核心概念（如果你不知道这些核心概念，那你就没办法写 Prompt 了，这个懒 ChatGPT 还暂时不能帮你偷），就可以役使 ChatGPT 帮你生成代码，你再调一调就可以把代码写出来了。<strong>ChatGPT，我想，他最大的好处就在于，他把我们从具体工程中的漫天文档中解救出来，让我们不用关心那么多繁冗的细节。</strong>在没有 ChatGPT 的时候，开发者形成对这些繁冗细节的良好理解力的最好的方式是积累开发的经验 —— 然而 ChatGPT 的出现正好让一个缺乏具体开发经验的人也能写出来一个不错的项目。</p>
+<p>在这篇短文里，我也不想发出类似于“前端已死！”这样的感叹 —— 一来我的资历仍然还是浅薄的很，并不支撑我做如此论断，二来天天呼喊“狼来了”也纯属庸人自扰，徒引人发笑耳。</p>
+<p>只是，ChatGPT 强大的功能，让我构想出第三次工业革命时期的一个画面：<strong>一位原本自得于娴熟操纵复杂机械的工人，看着一台袖珍的计算机用密密麻麻的电线向机械以一秒钟上万次的频率控制着机器，心中暗忖自己这几十年的“技术”算是白干了。</strong></p>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="/angrychow-blog/tags/Opinion/">Opinion</a>
+      
+      </div>
+    
+    
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>angrychow</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog/2023/05/31/endless-industrial-revolution/">https://angrychow.github.io/angrychow-blog/2023/05/31/endless-industrial-revolution/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog">https://angrychow.github.io/angrychow-blog</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+    
+      <a href="/angrychow-blog/2023/05/02/zibo-tourism/" id="art-right" class="art-right">
+        <span class="prev-title">
+          是谁让你去淄博吃烧烤的？<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nilaidawo" class="iconfont icon-zhihu" title="zhihu"></a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/angrychow" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2022 ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>History</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CSAPP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>GUI</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Opinion</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>History</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Tech Stack 记录/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>技术经历记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CSAPP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/csapp-某年期末-参考/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>CSAPP 复习用参考资料</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>GUI</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Win32-GUI-编程-合集/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>Win32 GUI 编程初探合集</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/23/GUI开发中的事件驱动机制/">
+            <time class="tagcloud-posttime">2023 / 01 / 23</time>
+            <span>GUI 开发中的事件驱动机制</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Opinion</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+            <time class="tagcloud-posttime">2023 / 05 / 31</time>
+            <span>由 ChatGPT 帮我写代码所想到的</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>短视频平台是怎样送你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/03/26/为什么我对程序员的未来感到悲观/">
+            <time class="tagcloud-posttime">2023 / 03 / 26</time>
+            <span>为什么我对应用层开发程序员的未来感到悲观</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/08/寻求增量：互联网公司的本能/">
+            <time class="tagcloud-posttime">2023 / 04 / 08</time>
+            <span>寻求增量：互联网公司的本能</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/16/摩西分海：数据库的红海中是否还存在一条坦途/">
+            <time class="tagcloud-posttime">2023 / 04 / 16</time>
+            <span>基础架构的红海中是否还存在一条坦途</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>是谁让你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+  <script></script>
+  <script src="/angrychow-blog/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/banderole.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>

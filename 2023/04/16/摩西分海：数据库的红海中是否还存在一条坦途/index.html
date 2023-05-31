@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="/default-avatar.png">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="/default-avatar.png">
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+  <meta name="keywords" content="Opinion, nlvi" />
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/syuanpi/syuanpi.min.css">
+
+
+
+
+
+    <link rel="icon" href="/default-avatar.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title> 基础架构的红海中是否还存在一条坦途 · angrychow 的博客 </title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/" id="article">
+        <span class="base-name">
+          
+            ARTICLE
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/archives" id="archives">
+        <span class="base-name">
+          
+            ARCHIVES
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="/angrychow-blog/" >
+            
+              ARTICLE
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="/angrychow-blog/archives" >
+            
+              ARCHIVES
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-04-16</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
+        
+          基础架构的红海中是否还存在一条坦途
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <p><em>本文内容为与两位学长聚餐时的聊天内容的整合</em></p>
+<h2 id="基础架构的红海中是否还存在一条坦途"><a href="#基础架构的红海中是否还存在一条坦途" class="headerlink" title="基础架构的红海中是否还存在一条坦途"></a>基础架构的红海中是否还存在一条坦途</h2><h3 id="新的数据库范式"><a href="#新的数据库范式" class="headerlink" title="新的数据库范式"></a>新的数据库范式</h3><p>2008 年，Oracle 公司收购了 MySQL 公司。在这一天，也许很多人会认为关系型数据库的技术架构发展历程已经走向了尽头，剩下的都是对现有模型的小修小补。但是互联网公司的快速崛起使得传统的单节点关系型数据库显得有些过时。从数据库层面来看，互联网公司的业务相较于其他行业的业务有以下两个特点：</p>
+<ul>
+<li>互联网公司每时每刻都在接收和处理大量的数据，他们要提供的服务需要分布式来减轻单台主机的负载，提高可用性。</li>
+<li>互联网公司对于每天所产生的大量用户数据非常感兴趣——他们希望能够在线分析用户数据（跑模型，分析用户偏好等），然后将分析的结果用于优化推送结果等。</li>
+</ul>
+<span id="more"></span>
+
+<p>在这基础上，开发者们大致分了两类数据库：</p>
+<ul>
+<li><p>在线处理型数据库（Online Transaction Processing，OLTP）<br>OLTP 数据库一般要处理大量的增删查改操作。因此，OLTP 数据库需要支持高并发、低延迟的事务处理，并且需要让数据库高度可用（提高系统的可用性和容错性，将事务分散到多个节点上进行计算，即使某个节点出现故障，整个系统仍然可以正常运行）。为达到这种要求，OLTP 数据库需要支持集群、分布式计算，以实现负载均衡，实现高可用性。</p>
+</li>
+<li><p>在线分析型数据库（Online Analytical Processing，OLAP）<br>OLAP 数据库主要用于多维数据的分析，这类数据库所要实现的最主要的功能是进行对大规模数据的快速分析与查询。从具体业务的角度来讲，OLAP 数据库通常支持复杂的查询和分析操作，例如数据透视表、多维分析、数据切片和切块、数据挖掘等。</p>
+</li>
+</ul>
+<p>目前而言，一些互联网公司现在的架构就是让在线处理型数据库挡在在线分析型数据库前面。在线处理型数据库用于处理业务，然后公司内部需要对数据进行分析的时候，处理型数据库导出数据到分析型数据库，公司里的数据分析师再根据分析型数据库去做分析。</p>
+<p>传统的数据库对以上两点的支持相当的差。以 <code>MySQL</code> 为例，它本身是单节点的数据库——所有的数据都被持久化在单台主机之上。虽然开发者们可以通过数据分片、主从复制等方式实现分布式存储与计算，但是这种方式显著的增加了系统的复杂性。使用 MySQL 进行数据分析也非常不理想。复杂的分析需求往往无法用 SQL 表达，同时数据分析通常需要对多维数据进行操作，使用 SQL 查询会导致大量的联合操作，使得分析效率低下。</p>
+<p>业务需求的急剧变化使得数据库行业焕发第二春。2015 年时，中国的数据库公司只有约 15 家，八年后，这个数字翻了两番。</p>
+<h3 id="大厂为什么乐于开源基础架构：PaaS-业务"><a href="#大厂为什么乐于开源基础架构：PaaS-业务" class="headerlink" title="大厂为什么乐于开源基础架构：PaaS 业务"></a>大厂为什么乐于开源基础架构：PaaS 业务</h3><p>目前，有很多公司——无论是初创公司还是大厂——都在进行基于新的数据库模型的基础架构开发。国内目前比较火的开源分布式数据库有 <code>TiDB</code>（PingCAP 开发，中国数据库领域的独角兽公司），OceanBase（阿里系资本主导的的数据库公司，脱胎于支付宝的数据库架构）等。然而对于大厂而言，做数据库开源、扩大技术影响力不是他们的目的所在，他们的最终目的是基于他们的数据库架构，出售 PaaS（Platform as a Service）作为解决方案。</p>
+<p>PaaS 与一般的服务器租赁服务不同。PaaS 服务提供商为开发者提供的不仅仅是服务器租赁服务，还有一系列计算、存储、数据库、消息队列、缓存、日志分析等软件服务。在服务商提供的平台上，开发者可以仅仅通过写几个配置文件来部署应用程序，而不需要关心底层的硬件、操作系统、中间件和其他基础设施等细节。当然，提供 PaaS 的前提是，服务的提供商需要建立一整套围绕着这些系统中间件的“生态环境”。</p>
+<p>总的来说，阿里云所提供的 PaaS 服务想要提供的是一整套运维服务。使用 PaaS 服务的开发人员无需关注服务器的基础设施，无需构建应用程序，他们只需要编写和测试自己的应用程序就可以上线服务。对于阿里而言，基础架构对内可以提高企业内应用开发迭代的效率，有利于公司的技术积累；对外还可以将这些基础架构打包成云服务卖出去，实现盈利。</p>
+<p>大厂的基础架构开源能够走得长久吗？PingCAP创始人刘奇说：带着KPI去做开源，大概率是搞不成的。</p>
+<p>在一段访谈中，刘奇说：</p>
+<p><em>如果开源是战略，不好意思，所有其他东西通通为开源让路，但是如果是KPI，不好意思，开源一边站。随着时间的积累，一天，两天，一年，两年，长时间下来差别就很大了。所以外面有一个说法挺有意思，说PingCAP是真开源，真开放。大家可能也听过另外一种开源，叫KPI开源，KPI开放。</em></p>
+<p><em>到底什么是开源，开源的本质到底是什么。很多的理解认为开源就是把代码往那一放（Source Open不等于Open Source），就觉得这就是开源，实际上来说，这个代码只是一个载体，今天可以看到我们整个运营的体系，整个开发的体系完全建立在开源上面。</em></p>
+<p><em>举个例子，比如刚才我们提到了一些别的开源项目，这些开源项目一天有多少个PR在合并，一天又多少个讨论在上面进行，它只是一个代码同步工具，还是说它真的是一个代码的协作平台，是一个人和人之间的连接和协作平台，我觉得这个是它非常本质的一个差别，就是我们到底把开源放在什么样的位置。</em></p>
+<p><em>我们也知道业界里面有一些厂商常常说：“我们第一次开源了，我们又一次开源了，这一次开源我们是认真的”。</em></p>
+<h3 id="认真做数据库的公司能够活下去吗"><a href="#认真做数据库的公司能够活下去吗" class="headerlink" title="认真做数据库的公司能够活下去吗"></a>认真做数据库的公司能够活下去吗</h3><p>对于大厂而言，他们有盈余时，可以“供养”基础架构工程师们进行开发，让他们为公司的业务开发打好牢固的基础设施基础；对于“特供”企业而言，他们不需要有独角兽级别的技术就能吃的盆满钵满。但是对于 PingCAP 这类“为数据库和开源而生”的公司而言，他们很难在中国找到一条变现的路径。五轮融资之后，PingCAP 仍然没有找到合适的商业化之路，现目前正在进行裁员。</p>
+<p>这里我们引用一条关于对 PingCAP 裁员消息的评论：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">作者：匿名用户</span><br><span class="line">链接：https://www.zhihu.com/question/590345523/answer/2942682182</span><br><span class="line">来源：知乎</span><br></pre></td></tr></table></figure>
+
+<p><em>利益相关：db从业者。</em></p>
+<p><em>国产数据库的浪潮，造就了很多类似第一代互联网的知识英雄的光鲜人物，这些人和他背后的公司更在乎技术、学术，光环拉满，但是现实是非常沉重的。数据库首先是商业软件，惋惜pingcap裁员的同时，不如想想，在中国，什么样的企业会去花钱买TiDB？</em></p>
+<p><em>互联网大厂？有听说用的，但是不多；中厂？确实有一些；小厂？买不起企业版，顶多用开源的。这些加起来份额有多少？政府央国企？这些可不管 TiDB 的技术PR多么诱人，他们首先就看，你这个数据库满足国产化要求吗，在信创目录里吗，用这个XX局&#x2F;处&#x2F;总能同意吗？不能就给你pass了。那在这种现实下， TiDB 能怎么办呢？有人一直在抱怨 TiDB PR多，吹牛多，从号称 Spanner 到 HTAP 再到 Serverless，假如 TiDB 能像XX之类的数据库拿政府单子拿到手软，他还用得着各种技术PR忽悠投资人么。。。</em></p>
+<p><em>现在国内最大的盘子就是国产化，一些DB从业者看不上的厂商，拿了无数你们公司会眼热的订单，而你们所谓亮闪闪技术牛逼炸的公司连入场投标资格都没有。这个就是现实。</em></p>
+<p>“为什么很多牛逼的开源软件来自欧洲，因为欧洲的失业保障平均每个月六七千块欧元。为什么<code>core.js</code>停更？因为开源作者在俄罗斯，找不到工作不说，骑摩托撞了人还得坐牢。如果你想挣钱，你必须时刻紧盯业务，你必须了解业务，这样你才能挣钱。”这是我的学长在谈到中间件开发时的感叹。</p>
+<p>国产软件自研，任重而道远。</p>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="/angrychow-blog/tags/Opinion/">Opinion</a>
+      
+      </div>
+    
+    
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>angrychow</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog/2023/04/16/%E6%91%A9%E8%A5%BF%E5%88%86%E6%B5%B7%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BA%A2%E6%B5%B7%E4%B8%AD%E6%98%AF%E5%90%A6%E8%BF%98%E5%AD%98%E5%9C%A8%E4%B8%80%E6%9D%A1%E5%9D%A6%E9%80%94/">https://angrychow.github.io/angrychow-blog/2023/04/16/%E6%91%A9%E8%A5%BF%E5%88%86%E6%B5%B7%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BA%A2%E6%B5%B7%E4%B8%AD%E6%98%AF%E5%90%A6%E8%BF%98%E5%AD%98%E5%9C%A8%E4%B8%80%E6%9D%A1%E5%9D%A6%E9%80%94/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog">https://angrychow.github.io/angrychow-blog</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>短视频平台是怎样送你去淄博吃烧烤的？
+        </span>
+      </a>
+    
+    
+      <a href="/angrychow-blog/2023/04/08/%E5%AF%BB%E6%B1%82%E5%A2%9E%E9%87%8F%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E7%9A%84%E6%9C%AC%E8%83%BD/" id="art-right" class="art-right">
+        <span class="prev-title">
+          寻求增量：互联网公司的本能<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nilaidawo" class="iconfont icon-zhihu" title="zhihu"></a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/angrychow" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2022 ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>History</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CSAPP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>GUI</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Opinion</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>History</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Tech Stack 记录/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>技术经历记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CSAPP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/csapp-某年期末-参考/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>CSAPP 复习用参考资料</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>GUI</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Win32-GUI-编程-合集/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>Win32 GUI 编程初探合集</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/23/GUI开发中的事件驱动机制/">
+            <time class="tagcloud-posttime">2023 / 01 / 23</time>
+            <span>GUI 开发中的事件驱动机制</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Opinion</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+            <time class="tagcloud-posttime">2023 / 05 / 31</time>
+            <span>由 ChatGPT 帮我写代码所想到的</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>短视频平台是怎样送你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/03/26/为什么我对程序员的未来感到悲观/">
+            <time class="tagcloud-posttime">2023 / 03 / 26</time>
+            <span>为什么我对应用层开发程序员的未来感到悲观</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/08/寻求增量：互联网公司的本能/">
+            <time class="tagcloud-posttime">2023 / 04 / 08</time>
+            <span>寻求增量：互联网公司的本能</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/16/摩西分海：数据库的红海中是否还存在一条坦途/">
+            <time class="tagcloud-posttime">2023 / 04 / 16</time>
+            <span>基础架构的红海中是否还存在一条坦途</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>是谁让你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+  <script></script>
+  <script src="/angrychow-blog/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/banderole.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>

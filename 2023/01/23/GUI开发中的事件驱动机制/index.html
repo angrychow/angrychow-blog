@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="/default-avatar.png">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="/default-avatar.png">
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+  <meta name="keywords" content="GUI, nlvi" />
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/syuanpi/syuanpi.min.css">
+
+
+
+
+
+    <link rel="icon" href="/default-avatar.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title> GUI 开发中的事件驱动机制 · angrychow 的博客 </title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/" id="article">
+        <span class="base-name">
+          
+            ARTICLE
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/archives" id="archives">
+        <span class="base-name">
+          
+            ARCHIVES
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="/angrychow-blog/" >
+            
+              ARTICLE
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="/angrychow-blog/archives" >
+            
+              ARCHIVES
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-01-23</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
+        
+          GUI 开发中的事件驱动机制
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h1 id="GUI-开发中的事件驱动机制"><a href="#GUI-开发中的事件驱动机制" class="headerlink" title="GUI 开发中的事件驱动机制"></a>GUI 开发中的事件驱动机制</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>很显然，您手头正在使用的计算机允许你同时运行好几个应用程序，这归功于您手头正在使用的计算机的操作系统支持“并发”（concurrency）。多个应用程序被抽象为多个进程，然后由操作系统来调度这多个进程。每个进程会被操作系统分配一个时间片，即每次被 CPU 选中来执行当前进程所用的时间。由于 CPU 的频率太高，进程之间的切换并不会让用户感到卡顿，所以给人一种“几个应用程序同时在运行”的感觉。</p>
+<p>一个进程可以拥有多个线程（Thread），不同的线程完成不同的任务，一个进程中线程之间的调度同样也是分配时间片、切换线程的模式。</p>
+<p>值得强调的是，进程与线程的<strong>调度</strong>是由操作系统进行的。</p>
+<span id="more"></span>
+
+<ul>
+<li>同步与异步</li>
+</ul>
+<p>进程间存在相互制约的关系。例如，进程 A 的某一个任务需要某一个资源才能继续进行，而这个资源需要进程 B 释放后进程 A 才能使用。那么，这之间就存在进程调度的问题。这里有进程同步与进程异步两种方案：</p>
+<p><img src="https://www.koyeb.com/static/images/blog/sync-vs-async-schema.png" alt="async"></p>
+<p>在进程同步（Synchronous Processing）中，进程 A 等待进程 B 的回应，期间不执行任务。在进程异步(Asynchronous Processing)中，进程 A 在等待进程 B 的过程中仍然在处理任务。</p>
+<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>回调函数作为另一个函数的<strong>参数</strong>被传递过去。回调函数作为<strong>形式参数</strong>可以被别的函数所调用。</p>
+<p>有时，我们希望在程序中某个耗时任务结束后执行一个函数。以上面的异步进程方案为例，我希望进程 A 在收到来自进程 B 的回应后进行相关的处理。</p>
+<p>例如在 javascript 中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">callback</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">// do something...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">setTimeout</span>(callback,<span class="number">1000</span>);<span class="comment">//it means: call callback after 1000ms</span></span><br></pre></td></tr></table></figure>
+
+<p>setTimeout 函数在计时器达到 1000ms 后调用 <code>callback</code> 函数。在这里我们可以看到，调用函数的主体并不是应用程序，而是负责底层运作的其他程序。在同步异步编程中，我们常常用到回调函数。</p>
+<h2 id="事件驱动"><a href="#事件驱动" class="headerlink" title="事件驱动"></a>事件驱动</h2><h3 id="什么是事件驱动"><a href="#什么是事件驱动" class="headerlink" title="什么是事件驱动"></a>什么是事件驱动</h3><p>也许您之前编写的程序的工作流程是这样的：</p>
+<p><strong>打开程序</strong> -&gt; <strong>程序执行</strong> -&gt; <strong>执行完毕，自行退出</strong></p>
+<p>对于一个事件驱动的程序而言，其工作流程是这样的：</p>
+<p><strong>打开程序</strong> -&gt; <strong>程序初始化后等待用户操作</strong> -&gt; <strong>用户操作，执行相应代码，继续等待用户操作</strong> -&gt; <strong>用户退出，程序结束</strong></p>
+<p>我们可以看到，对于一个事件驱动的程序而言，他的程序的执行并不是按照某个既定顺序的。事件驱动的程序面向收到的事件编程：某个事件产生了，应用程序做出相应的回应。</p>
+<h3 id="事件驱动的实例：消息循环"><a href="#事件驱动的实例：消息循环" class="headerlink" title="事件驱动的实例：消息循环"></a>事件驱动的实例：消息循环</h3><p>下面这张图展示了一个事件驱动型系统的事件分发模型。</p>
+<p><img src="https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/images/event-driven.svg" alt="event_driven"></p>
+<p>具体到 Windows 下的 GUI 开发而言，Event Producers 可以是鼠标点击、键盘按下这样的事件，也可以是定时器事件（到了某一个特定的时间点，产生一个事件）。在 Windows 操作系统中，每一个线程存在一个消息队列，操作系统来维护线程的消息队列，各类事件的分发都由操作系统来执行。在这里，Windows 操作系统担任了 Event Ingestion 的角色。最后，线程在自己的消息队列中通过操作系统接口获得 Windows 操作系统为其提供的 Events，并将其进行处理，担任了 Event Consumers 的角色。</p>
+<p>下面是 Win32 SDK 提供的 <code>GetMessage</code>函数的使用例子，这里的程序代码被真实地使用在 GUI 开发中。（细节被省略了)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> APIENTRY <span class="title">wWinMain</span><span class="params">(args...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">prepare</span>();</span><br><span class="line"></span><br><span class="line">    MSG msg;</span><br><span class="line">    <span class="comment">// 主消息循环:</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">GetMessage</span>(&amp;msg, <span class="literal">nullptr</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">TranslateAccelerator</span>(msg.hwnd, hAccelTable, &amp;msg))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">TranslateMessage</span>(&amp;msg);</span><br><span class="line">            <span class="built_in">DispatchMessage</span>(&amp;msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="type">int</span>) msg.wParam;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>前面的代码看起来不知所云，我们只需要关心最后几行，也就是“主消息循环”的部分：<code>GetMessage</code>让线程得以从消息队列中获取消息（传递到变量 msg 中，注意到这里是引用传递）。如果获得的是退出的消息，那么<code>GetMessage</code>将会返回 0 让程序退出消息循环。如果没有得到消息，那么<code>GetMessage</code>函数将会<strong>阻塞</strong>当前线程（也就是让当前线程“睡着”），不返回值。</p>
+<p>一个典型的事件驱动的程序，包含一个不断执行循环（在上面这个例子中，就是消息循环），并以一个线程的形式存在，这个循环包括两个部分，第一个部分是按照一定的条件接收并选择一个要处理的事件，第二个部分就是事件的处理过程。程序的执行过程就是选择事件和处理事件，而当没有任何事件触发时，程序会因查询事件队列失败而进入睡眠状态，从而释放cpu。接下来是程序处理事件的程序段：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  函数: WndProc(HWND, UINT, WPARAM, LPARAM)</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  目标: 处理主窗口的消息。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  WM_COMMAND  - 处理应用程序菜单</span></span><br><span class="line"><span class="comment">//  WM_PAINT    - 绘制主窗口</span></span><br><span class="line"><span class="comment">//  WM_DESTROY  - 发送退出消息并返回</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function">LRESULT CALLBACK <span class="title">WndProc</span><span class="params">(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (message)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> WM_COMMAND:</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> wmId = <span class="built_in">LOWORD</span>(wParam);</span><br><span class="line">            <span class="comment">// 分析菜单选择:</span></span><br><span class="line">            <span class="keyword">switch</span> (wmId)</span><br><span class="line">            &#123;</span><br><span class="line">            <span class="keyword">case</span> IDM_ABOUT:</span><br><span class="line">                <span class="built_in">DialogBox</span>(hInst, <span class="built_in">MAKEINTRESOURCE</span>(IDD_ABOUTBOX), hWnd, About);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> IDM_EXIT:</span><br><span class="line">                <span class="built_in">DestroyWindow</span>(hWnd);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hWnd, message, wParam, lParam);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> WM_PAINT:</span><br><span class="line">        &#123;</span><br><span class="line">            PAINTSTRUCT ps;</span><br><span class="line">            HDC hdc = <span class="built_in">BeginPaint</span>(hWnd, &amp;ps);</span><br><span class="line">            <span class="comment">// <span class="doctag">TODO:</span> 在此处添加使用 hdc 的任何绘图代码...</span></span><br><span class="line">            <span class="built_in">EndPaint</span>(hWnd, &amp;ps);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">        <span class="built_in">PostQuitMessage</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hWnd, message, wParam, lParam);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的 <code>WndProc</code> 函数是一个事件处理函数，如同他前面标注的宏一样，他是一个 <code>CALLBACK</code> 函数（回调函数）。消息循环在获得消息后，该条消息就会被翻译、分发，分发函数再进行处理后回调 <code>WndProc</code> 函数处理事件，在程序段中，你可以看到该函数利用 <code>switch</code> 语句进行了事件类型的判别，并且对不同的事件类型做出了不同的回应。</p>
+<h2 id="async-x2F-await：对事件驱动机制的进一步封装"><a href="#async-x2F-await：对事件驱动机制的进一步封装" class="headerlink" title="async &#x2F; await：对事件驱动机制的进一步封装"></a>async &#x2F; await：对事件驱动机制的进一步封装</h2><p><em>以下内容需要您有 JavaScript 编程的经验</em></p>
+<p>JavaScript 与 C# 支持 async&#x2F;await 操作，这两个语言又正好是 GUI 开发的主力语言。这里笔者以 JavaScript 的 async&#x2F;await 操作为例，表明其与事件驱动机制的关联。下面是一则 JavaScript 拉取数据的代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">handleMessage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">await</span> <span class="title function_">useAPI</span>(<span class="string">&#x27;url...&#x27;</span>)</span><br><span class="line">    <span class="comment">//handle data...</span></span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">  &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="comment">//handle error...</span></span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// useAPI 异步，他从网络的某个url拉取数据后将数据返回给变量data</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript 引擎单线程，也就意味着跑在某个 JS 引擎上的一段代码不会并发，只会运行一处。事实上，JavaScript 的所有耗时异步操作全部由embedder（例如 libuv 等）提供支持，JS 自身只从 embedder 提供的 callback queue 中获得事件。</p>
+<p><img src="https://felixgerschau.com/static/79486d91b22a7c1b4044fce88a4cae20/5a190/js-event-loop-explained.png" alt="js_event_queue"></p>
+<p>js 引擎从 embedder 提供的 callback queue 获取事件并进行处理的机制，就叫做 event loop 机制。QuickJS 对 event loop 机制的实现如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* main loop which calls the user JS callbacks */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">js_std_loop</span><span class="params">(JSContext *ctx)</span></span><br><span class="line">&#123;</span><br><span class="line">    JSContext *ctx1;</span><br><span class="line">    <span class="type">int</span> err;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(;;) &#123;</span><br><span class="line">        <span class="comment">/* execute the pending jobs */</span></span><br><span class="line">        <span class="keyword">for</span>(;;) &#123;</span><br><span class="line">            err = JS_ExecutePendingJob(JS_GetRuntime(ctx), &amp;ctx1);</span><br><span class="line">            <span class="keyword">if</span> (err &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (err &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                    js_std_dump_error(ctx1);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!os_poll_func || os_poll_func(ctx))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>os_poll_func与上文提到的 <code>GetMessage</code>有着类似的行为。你会惊讶的发现，这两者的底层实现完全同构，只是 JavaScript 的事件循环机制被引擎给封装好了。</p>
+<p>我们回到上面关于 async&#x2F;await 的讨论。首先，被挂上了 async 的函数，其最终返回的会是一个 Promise 对象。顾名思义，所以所有挂了 async 的函数，在调用时，会被当作一个异步函数对待。</p>
+<p>JavaScript 的 async&#x2F;await 机制高妙的地方在于，他用 await 符阻塞了当前代码块，让原先本应当是<strong>回调函数</strong>的部分被以顺序控制流的形式展现出来。我们用另外两种代码书写方式（callback，链式调用）来重新书写以上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//回调</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">callbackStyle</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">handleData</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">handleError</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">useAPI</span>(&#123;<span class="attr">url</span>: <span class="string">&#x27;url...&#x27;</span>,<span class="attr">success</span>: handleData,<span class="attr">failed</span>: handleError&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链式调用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">chainStyle</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">uesAPI</span>(<span class="string">&#x27;url&#x27;</span>).<span class="title function_">then</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//handle data...</span></span><br><span class="line">  &#125;).<span class="title function_">catch</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//handle error...</span></span><br><span class="line">  &#125;).<span class="title function_">finally</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//async/await 调用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">awaitAsyncStyle</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">await</span> <span class="title function_">useAPI</span>(<span class="string">&#x27;url...&#x27;</span>)</span><br><span class="line">    <span class="comment">//handle data...</span></span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">  &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="comment">//handle error...</span></span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// useAPI 异步，他从网络的某个url拉取数据后将数据返回给变量data</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到，await&#x2F;async 机制让 JavaScript 用户不感受到自己正在写回调函数，在编写者看来，他们似乎利用 await 阻塞了当前的控制流。然而实际上，后面的代码块是作为回调函数出现的。</p>
+<p>可以说，JS 利用 await&#x2F;async 机制（或者 Promise 链式调用机制），将消息循环（事件驱动机制）和回调屏蔽了，用户可以不和这两个东西打交道。但是理解 JS 的事件驱动机制的原理仍然是很重要的。</p>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="/angrychow-blog/tags/GUI/">GUI</a>
+      
+      </div>
+    
+    
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>angrychow</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/">https://angrychow.github.io/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog">https://angrychow.github.io/angrychow-blog</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/angrychow-blog/2023/03/26/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%9C%AA%E6%9D%A5%E6%84%9F%E5%88%B0%E6%82%B2%E8%A7%82/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>为什么我对应用层开发程序员的未来感到悲观
+        </span>
+      </a>
+    
+    
+      <a href="/angrychow-blog/2023/01/21/Tech%20Stack%20%E8%AE%B0%E5%BD%95/" id="art-right" class="art-right">
+        <span class="prev-title">
+          技术经历记录<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nilaidawo" class="iconfont icon-zhihu" title="zhihu"></a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/angrychow" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2022 ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>History</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CSAPP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>GUI</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Opinion</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>History</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Tech Stack 记录/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>技术经历记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CSAPP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/csapp-某年期末-参考/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>CSAPP 复习用参考资料</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>GUI</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Win32-GUI-编程-合集/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>Win32 GUI 编程初探合集</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/23/GUI开发中的事件驱动机制/">
+            <time class="tagcloud-posttime">2023 / 01 / 23</time>
+            <span>GUI 开发中的事件驱动机制</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Opinion</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+            <time class="tagcloud-posttime">2023 / 05 / 31</time>
+            <span>由 ChatGPT 帮我写代码所想到的</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>短视频平台是怎样送你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/03/26/为什么我对程序员的未来感到悲观/">
+            <time class="tagcloud-posttime">2023 / 03 / 26</time>
+            <span>为什么我对应用层开发程序员的未来感到悲观</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/08/寻求增量：互联网公司的本能/">
+            <time class="tagcloud-posttime">2023 / 04 / 08</time>
+            <span>寻求增量：互联网公司的本能</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/16/摩西分海：数据库的红海中是否还存在一条坦途/">
+            <time class="tagcloud-posttime">2023 / 04 / 16</time>
+            <span>基础架构的红海中是否还存在一条坦途</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>是谁让你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+  <script></script>
+  <script src="/angrychow-blog/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/banderole.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>

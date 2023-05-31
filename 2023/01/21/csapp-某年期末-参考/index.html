@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="/default-avatar.png">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="/default-avatar.png">
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+  <meta name="keywords" content="CSAPP, nlvi" />
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/syuanpi/syuanpi.min.css">
+
+
+
+
+
+    <link rel="icon" href="/default-avatar.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title> CSAPP 复习用参考资料 · angrychow 的博客 </title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/" id="article">
+        <span class="base-name">
+          
+            ARTICLE
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/archives" id="archives">
+        <span class="base-name">
+          
+            ARCHIVES
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="/angrychow-blog/" >
+            
+              ARTICLE
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="/angrychow-blog/archives" >
+            
+              ARCHIVES
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-01-21</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
+        
+          CSAPP 复习用参考资料
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h1 id="CSAPP-期末复习"><a href="#CSAPP-期末复习" class="headerlink" title="CSAPP 期末复习"></a>CSAPP 期末复习</h1><h2 id="CSAPP-某年期末"><a href="#CSAPP-某年期末" class="headerlink" title="CSAPP 某年期末"></a>CSAPP 某年期末</h2><h3 id="判断题-2pts-8-x3D-16pts"><a href="#判断题-2pts-8-x3D-16pts" class="headerlink" title="判断题 2pts * 8&#x3D;16pts"></a>判断题 2pts * 8&#x3D;16pts</h3><p>1-1 <code>(x|-x)&gt;&gt;31 == -1</code> x 的类型是 int</p>
+<p>1-2 UNIX 系统中，文件就是字节序列，每个I&#x2F;O设备都可以看成文件。</p>
+<p>1-3 <code>-1 &lt; 0U</code></p>
+<p>1-4 <code>cmpq (%rax), 6(%rsp)</code></p>
+<span id="more"></span>
+
+<p>1-5 fork 调用一次，返回两次</p>
+<p>1-6 <code>x&gt;&gt;3==x/8</code></p>
+<p>1-7 连接器的两个主要任务是符号解析和地址重定位</p>
+<p>1-8 <code>lea %r12, 0x2006ae(%rip)</code></p>
+<h3 id="单选题-2pts-20-x3D-40pts"><a href="#单选题-2pts-20-x3D-40pts" class="headerlink" title="单选题 2pts * 20 &#x3D; 40pts"></a>单选题 2pts * 20 &#x3D; 40pts</h3><p>2-1 运行 C 代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">short</span> si = <span class="number">-128</span>;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">short</span> usi = si;</span><br></pre></td></tr></table></figure>
+
+<p>那么<code>usi</code>的值是：</p>
+<ul>
+<li>A. 65407</li>
+<li>B. 128</li>
+<li>C. 65408</li>
+<li>D. 127</li>
+</ul>
+<p>2-2 对于下面两个程序<br><code>a1.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">f</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">int</span> x = <span class="number">15213</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  f();</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;x=%d\n&quot;</span>,x);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>a2.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">  x = <span class="number">15212</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先执行命令 <code>gcc -o foo a1.c a2.c</code>，接着执行 foo 后，x的输出结果是</p>
+<ul>
+<li>A. 15213</li>
+<li>B. 15212</li>
+<li>垃圾选项</li>
+</ul>
+<p>2-3 对于某8位计算机，整数用补码表示，假设x&#x3D;60，y&#x3D;-30，则x+y的机器数以及相对应的OF（1为溢出，0为不溢出）为：</p>
+<ul>
+<li>A. 0x1E, 0</li>
+<li>B. 0xE2, 1</li>
+<li>C. 0x1E, 1</li>
+<li>D. 0xE2, 0</li>
+</ul>
+<p>2-4 对于 gcc 工具链而言，cpp、ccl、as、ld 分别代表着：</p>
+<ul>
+<li>A. 编译器、预处理器、链接器、汇编器</li>
+<li>B. 编译器、预处理器、汇编器、链接器</li>
+<li>C. 预处理器、链接器、编译器、汇编器</li>
+<li>D. 预处理器、编译器、汇编器、链接器</li>
+</ul>
+<p>2-5 已知变量 y 的类型是 float，位于地址 0x400 处，它的十六进制为 0x01234567，在采用小端模式存储的机器中，地址范围为 0x400 ~ 0x403 处存储的字节依次为：</p>
+<ul>
+<li>A. 0x67 0x45 0x23 0x01</li>
+<li>B. 0x01 0x23 0x45 0x67</li>
+<li>垃圾选项</li>
+</ul>
+<p>2-6 十六位补码整数的范围</p>
+<ul>
+<li>A. $-2^{15}\sim +(2^{15}-1)$</li>
+<li>B. $-(2^{15}-1)\sim +(2^{15}-1)$</li>
+<li>C. $-2^{16}\sim +(2^{16}-1)$</li>
+<li>D. $-(2^{16}-1)\sim +(2^{16}-1)$</li>
+</ul>
+<p>2-7 采用 GCC 工具链 将下述 C 语言程序编译成汇编代码，请问代码中<code>x</code>,<code>des</code>分别存储在哪个寄存器中</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">mul</span><span class="params">(<span class="type">long</span> x, <span class="type">long</span> y, <span class="type">long</span> des)</span> &#123;</span><br><span class="line">  <span class="type">long</span> t = sum(x,y);</span><br><span class="line">  des = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>A. rsi, rcx</li>
+<li>B. rdi, rdx</li>
+<li>C. rsi, rdi</li>
+<li>D. rdx, rsi</li>
+</ul>
+<p>2-8 “缺页”属于异常中的：</p>
+<ul>
+<li>A. 中断</li>
+<li>B. 终止</li>
+<li>C. 陷阱</li>
+<li>D. 故障</li>
+</ul>
+<p>2-9 某些情况下 read 和 write 传送的字节数比程序要求的要少，这些不足值出现的原因包括</p>
+<ul>
+<li>A. 读到EOF</li>
+<li>B. 从终端读文本行</li>
+<li>C. 读取网络套字节</li>
+<li>D. 典中典之以上都正确</li>
+</ul>
+<p>2-10 链接可以发生在哪个阶段？最正确的答案是</p>
+<ul>
+<li>A. 加载时</li>
+<li>B. 运行时</li>
+<li>C. 编译时</li>
+<li>D. 典中典之以上都正确</li>
+</ul>
+<p>2-11 在 Linux 下，下列哪个命令行可以将 C 程序 <code>test.c</code> 编译生成可执行文件</p>
+<ul>
+<li>A. <code>objdump -d test.o</code></li>
+<li>B. <code>gcc -O1 -o result test.o</code></li>
+<li>C. <code>gcc -Og -o result test.c</code></li>
+<li>D. <code>gcc -Og -c test test.c</code></li>
+</ul>
+<p>2-12 表示传送字节的指令是</p>
+<ul>
+<li>A. movw</li>
+<li>B. movq</li>
+<li>C. movb</li>
+<li>D. movl</li>
+</ul>
+<p>2-13 下列寄存器中，不属于被调用者保存寄存器的是</p>
+<ul>
+<li>A. r12</li>
+<li>B. rbp</li>
+<li>C. rbx</li>
+<li>D. rax</li>
+</ul>
+<p>2-14 设数组<code>short = T[3]</code>。假设数组的起始地址为$x_t$，则<code>T[2]</code>的地址是</p>
+<ul>
+<li>A. $x_t+8$</li>
+<li>B. $x_t+4$</li>
+<li>C. $x_t+16$</li>
+<li>D. $x_t+2$</li>
+</ul>
+<p>2-15 假设 p 为一个 char* 类型的指针，他的值为 $x$，则表达式 <code>(int*)p+7</code>的值为</p>
+<ul>
+<li>A. $4x+28$</li>
+<li>B. $4x+7$</li>
+<li>C. $x+28$</li>
+<li>D. $x+7$</li>
+</ul>
+<p>2-16 异常中异步发生的是</p>
+<ul>
+<li>A. 中断</li>
+<li>B. 故障</li>
+<li>C. 终止</li>
+<li>D. 陷阱</li>
+</ul>
+<p>2-17 已知寄存器<code>rax</code>的值为0x0011223344556677,执行指令<code>movl $-1, %eax</code>，则<code>rax</code>的值变为：</p>
+<ul>
+<li>A. 0x00000000FFFFFFFF</li>
+<li>B. 0x000000000000FFFF</li>
+<li>C. 0x00112233FFFFFFFF</li>
+<li>D. 0x001122330000FFFF</li>
+</ul>
+<p>2-18 已知地址0x100的值为0xff，地址0x104的值为0xab，地址0x108的值为0x13，地址0x10c的值为0x11，寄存器%rax的值为0x100，寄存器%rdx的值为0x3，则操作数<code>9(%rax,%rdx)</code>代表的值是</p>
+<ul>
+<li>A. 0xff</li>
+<li>B. 0xab</li>
+<li>C. 0x13</li>
+<li>D. 0x11</li>
+</ul>
+<p>2-19  下面关于 Unix I&#x2F;O 的叙述中，不正确的是</p>
+<ul>
+<li>A. 可以读取文件的元数据</li>
+<li>B. 允许执行I&#x2F;O重定向</li>
+<li>C. Unix I&#x2F;O 可以完成的事情，标准I&#x2F;O 也可以完成</li>
+<li>D. 将一个打开的文件模型化为一个流</li>
+</ul>
+<p>2-20 已知IEEE754单精度浮点数的值为0xC0B00000，他的十进制是：</p>
+<ul>
+<li>A. -5.5</li>
+<li>B. -0.75</li>
+<li>C. -1.5</li>
+<li>D. -2.75</li>
+</ul>
+<h3 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h3><p>4-1 （1pts*10&#x3D;10pts）<br>若某机器为6位，有符号数int用补码表示，填写下表（1）-（10），有如下声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">-1</span>;</span><br><span class="line">usigned ux = x;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>十进制表示</th>
+<th>二进制表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>零</td>
+<td>0</td>
+<td>000000</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-10</td>
+<td>(5)</td>
+</tr>
+<tr>
+<td>x</td>
+<td>-1</td>
+<td>(6)</td>
+</tr>
+<tr>
+<td>ux</td>
+<td>(1)</td>
+<td>(7)</td>
+</tr>
+<tr>
+<td>x&gt;&gt;1</td>
+<td>(2)</td>
+<td>(8)</td>
+</tr>
+<tr>
+<td>TMin</td>
+<td>(3)</td>
+<td>(9)</td>
+</tr>
+<tr>
+<td>TMin+TMin</td>
+<td>(4)</td>
+<td>(10)</td>
+</tr>
+</tbody></table>
+<p>4-2(2pts*3&#x3D;6pts)<br>分析下表左侧汇编代码，找出右侧唯一等价的 C 函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">foo1:</span><br><span class="line">  lea 0xf(%rdi), %eax</span><br><span class="line">  test %edi, %edi</span><br><span class="line">  comvns %edi, %eax</span><br><span class="line">  sar $0x4, %eax</span><br><span class="line">  retq</span><br><span class="line"></span><br><span class="line">foo2:</span><br><span class="line">  mov %edi, %eax</span><br><span class="line">  shr $0x1f, %eax</span><br><span class="line">  retq</span><br><span class="line"></span><br><span class="line">foo3:</span><br><span class="line">  mov %edi, %eax</span><br><span class="line">  sal %0x4, %eax</span><br><span class="line">  sub %edi, %eax</span><br><span class="line">  retq</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">choice1</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x &lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">choice2</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (x &gt;&gt; <span class="number">31</span>) &amp; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">choice3</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">15</span> * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">choice4</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (x + <span class="number">15</span>)/<span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">choice5</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x / <span class="number">16</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">choice6</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (x &gt;&gt; <span class="number">31</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>foo1 对应choice____</li>
+<li>foo2 对应choice____</li>
+<li>foo3 对应choice____</li>
+</ol>
+<p>4-3 求M、N（8分）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> mat1[M][N];</span><br><span class="line"><span class="type">long</span> mat2[N][M];</span><br><span class="line"><span class="type">long</span> <span class="title function_">sum_element</span><span class="params">(<span class="type">long</span> i,<span class="type">long</span> j)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> mat1[i][j]+mat2[i][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum_element:</span><br><span class="line">  leaq (%rdi,%rdi,2)%rdx</span><br><span class="line">  addq %rsi,%rdx</span><br><span class="line">  leaq (%rdi,rdi,8), %rax</span><br><span class="line">  addq %rax,%rsi</span><br><span class="line">  movq mat2(,%rsi,8),%rax</span><br><span class="line">  addq mat1(,%rdx,8),%rax</span><br><span class="line">  retq</span><br></pre></td></tr></table></figure>
+
+<p>4-4 程序完形填空（8分）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">foo:</span><br><span class="line">  movl $0,%eax</span><br><span class="line">  jmp .L2</span><br><span class="line">.L3:</span><br><span class="line">  subl $1,%edi</span><br><span class="line">  addl $1,%esi</span><br><span class="line">  addl $1,%eax</span><br><span class="line">.L2:</span><br><span class="line">  cmpl %esi,%edi</span><br><span class="line">  jg .L3</span><br><span class="line">  addl $1,%eax</span><br><span class="line">  ret</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">foo</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;</span><br><span class="line">  <span class="type">int</span> result;</span><br><span class="line">  <span class="keyword">for</span>((<span class="number">1</span>)____;(<span class="number">2</span>)____;result++) &#123;</span><br><span class="line">    (<span class="number">3</span>)____;</span><br><span class="line">    (<span class="number">4</span>)____;</span><br><span class="line">  &#125;</span><br><span class="line">  result ++;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4-5 阅读下列代码，回答以下问题（12分）<br>调用 bar 函数时，参数 x 的值是 0xaabbccdd，且在响应gets时键入’01234567890123456’，分析下表中给出的代码，然后回答以下问题。<br>（提示：1、get是标准库函数，%rdi存放的是输入缓冲区等候地址。2、x86处理器小端存储。3、’0’-‘9’的字符ASCII码为0x30-0x39）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">push %rbp</span><br><span class="line">mov %rsp,%rbp</span><br><span class="line">sub $0x30,%rsp</span><br><span class="line">mov %edi,-0x24(%rbp)</span><br><span class="line">movl $0x11223344, -0x10(%rbp)</span><br><span class="line">mov -0x24(%rbp),%eax</span><br><span class="line">mov %eax, -0xc(%rbp)</span><br><span class="line">lea -0x20(%rbp),%rax</span><br><span class="line">mov %rax,%rdi</span><br><span class="line">mov $0x0,%eax</span><br><span class="line">callq 0x400450&lt;gets@plt&gt;</span><br><span class="line">mov -0xc(%rbp),%edx</span><br><span class="line">mov -0x10(%rbp),%eax</span><br><span class="line">lea -0x20(%rbp),%rcx</span><br><span class="line">mov %eax,%esi</span><br><span class="line">mov $0x400654,%edi</span><br><span class="line">mov $0x0,%eax</span><br><span class="line">callq 0x400430 &lt;printf@plt&gt;</span><br><span class="line">nop</span><br><span class="line">mov %rbp,%rsp</span><br><span class="line">pop %rbp</span><br><span class="line">retq</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">bar</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">  <span class="type">int</span> a[<span class="number">3</span>];</span><br><span class="line">  <span class="type">char</span> buf[<span class="number">4</span>];</span><br><span class="line">  a[<span class="number">0</span>] = <span class="number">0x11223344</span>;</span><br><span class="line">  a[<span class="number">1</span>] = x;</span><br><span class="line">  gets(buf);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;a[0]=0x%x,a[1]=0x%x,buf=%s\n&quot;</span>,a[<span class="number">0</span>],a[<span class="number">1</span>],buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>a) 指出程序中下列值是否被溢出破坏(2pts*4&#x3D;8pts)</p>
+<ul>
+<li>a[0] (y&#x2F;n)</li>
+<li>a[1] (y&#x2F;n)</li>
+<li>x 的值 (y&#x2F;n)</li>
+<li>寄存器 %rbp 保存的值 (y&#x2F;n)</li>
+</ul>
+<p>b) 程序打印结果为(1pts*3&#x3D;3pts)</p>
+<ul>
+<li>a[0]:0x_____________</li>
+<li>a[1]:0x_____________</li>
+<li>buf(ASCII):_________</li>
+</ul>
+<p>c) 如果编写C程序调用上述bar函数，问：（1pts）</p>
+<ul>
+<li>当输入到第____个字符后无法从bar函数正常返回。</li>
+</ul>
+<h2 id="CSAPP-往年期末题-参考"><a href="#CSAPP-往年期末题-参考" class="headerlink" title="CSAPP 往年期末题 参考"></a>CSAPP 往年期末题 参考</h2><h3 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h3><p>1-1 错误，$x&#x3D;0$时，<code>(x|-x)&gt;&gt;31</code>为0。</p>
+<p>1-2 正确，PPT 原话</p>
+<p>1-3 错误，运算与比较中出现无符号数时有符号数转为无符号数，左端<code>-1</code>转为无符号数<code>(1u&lt;&lt;31)</code></p>
+<p>1-4 错误，指令两端不能同时操作内存。</p>
+<p>1-5 正确，这是<code>fork</code>函数的特征。</p>
+<p>1-6 错误，<code>x&gt;&gt;3</code>向下舍入，<code>x/8</code>向0舍入。</p>
+<p>1-7 正确</p>
+<p>1-8 错误，load effective address 指令（lea）的目的操作数必须是一个寄存器（中文版P129）</p>
+<h3 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h3><p>2-1 B<br>short 两字节，转换为无符号数为65408。</p>
+<p>2-2 B<br>补充：上面那一段是a1.c，下面那一段时a2.c</p>
+<p>编译时，a2.c中的变量<code>x</code>是弱符号，归入a1.c中的强符号<code>x</code>中，函数<code>f</code>对其产生的引用对全局的<code>x</code>变量产生影响。</p>
+<p>2-3 A<br>注意，OF（Overflow Flag）针对的是有符号数溢出；这里的运算没有发生有符号数溢出，所以为0。值得注意的是$-30+60&#x3D;(1110<del>0010)+(0011</del>1100)$发生无符号数溢出，CF（Carry Flag）为1。</p>
+<p>2-4 D</p>
+<p>2-5 A<br>小端法内存低位存数据低位，大端法内存地位存数据高位。</p>
+<p>2-6 A</p>
+<p>2-7 原问题补充：<code>x</code>和<code>des</code>分别存储在寄存器 B</p>
+<p>2-8 D</p>
+<ul>
+<li>中断：设备IO，异步发生。</li>
+<li>陷阱：<code>syscall</code>，向内核进行请求，同步发生，总能返回原进程。</li>
+<li>故障：出现问题（例如缺页），可能出错，不一定能返回原进程，同步发生。</li>
+<li>终止：发生致命错误，同步发生，原进程停止。</li>
+</ul>
+<p>2-9 D</p>
+<p>2-10 D<br>动态链接库可以在多个阶段进行链接</p>
+<p>2-11 C</p>
+<ul>
+<li><code>gcc -o</code>：可执行文件</li>
+<li><code>gcc -S</code>：汇编文件</li>
+<li><code>gcc -c</code>：可重定位文件</li>
+<li><code>objdump -d</code>：二进制文件反汇编</li>
+</ul>
+<p>2-12 C</p>
+<p>2-13 D<br>书上没有显式指明<code>%rax</code>是调用者保存，但是<code>%rax</code>的功能是保存被调用者返回值，显然<code>%rax</code>的值在调用者调用前是需要调用者自己保存的。</p>
+<p>2-14 B<br>$\mathrm{ADDR}[&amp;T[i]]&#x3D;x_{t}+\mathrm{sizeof}(T[i])*(i)$</p>
+<p>2-15 C<br>指针类型强制转换不会改变其内部的值，$val(\mathrm{pointer}+\mathrm{offset})&#x3D;val(\mathrm{pointer})+\mathrm{sizeof}(\mathrm{pointer}指向的类型)*\mathrm{offset}$</p>
+<p>2-16 A</p>
+<p>2-17 A<br><code>movl</code>高32位清零。</p>
+<p>2-18 D</p>
+<p>2-19 C<br>标准IO库不适用于网络套字节的IO，并且标准IO不能读取文件的元数据。</p>
+<p>2-20 rectify:他的十进制是 A<br>$\mathrm{0xC0B00000}&#x3D;(\mathrm{1<del>10000001</del>011}),\mathrm{sign}&#x3D;-1,\mathrm{Exponent}&#x3D;129-\mathrm{bias}&#x3D;2,M&#x3D;1+f&#x3D;1.375$</p>
+<h3 id="填空题-1"><a href="#填空题-1" class="headerlink" title="填空题"></a>填空题</h3><p>4-1</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>十进制表示</th>
+<th>二进制表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>零</td>
+<td>0</td>
+<td>000000</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-10</td>
+<td><strong>110110</strong></td>
+</tr>
+<tr>
+<td>x</td>
+<td>-1</td>
+<td><strong>111111</strong></td>
+</tr>
+<tr>
+<td>ux</td>
+<td><strong>63</strong></td>
+<td><strong>111111</strong></td>
+</tr>
+<tr>
+<td>x&gt;&gt;1</td>
+<td><strong>-1</strong></td>
+<td><strong>111111</strong></td>
+</tr>
+<tr>
+<td>TMin</td>
+<td><strong>-32</strong></td>
+<td><strong>100000</strong></td>
+</tr>
+<tr>
+<td>TMin+TMin</td>
+<td><strong>0</strong></td>
+<td><strong>000000</strong></td>
+</tr>
+</tbody></table>
+<p>4-2</p>
+<ol>
+<li>foo1 对应choice<strong>5</strong><ul>
+<li>他这里做的是从向下舍入除法变为向零舍入除法。</li>
+</ul>
+</li>
+<li>foo2 对应choice<strong>2</strong><ul>
+<li>注意<code>foo2</code>进行的是逻辑右移</li>
+</ul>
+</li>
+<li>foo3 对应choice<strong>3</strong><ul>
+<li>很典型的乘法二进制拆分</li>
+</ul>
+</li>
+</ol>
+<p>4-3</p>
+<p>汇编进行一下简单翻译，就是：<code>return *(mat1+3*i+j)+*(mat2+9*i+j)</code></p>
+<p>不难得知$N&#x3D;3,M&#x3D;9$</p>
+<p>4-4</p>
+<p>在这里，编译器用jump-to-middle法翻译for循环。</p>
+<ol>
+<li><code>result = 0</code></li>
+<li><code>y &lt; x</code></li>
+<li><code>x--</code></li>
+<li><code>y++</code></li>
+</ol>
+<p>4-5</p>
+<ul>
+<li><code>a[0]</code> 被破坏</li>
+<li><code>a[1]</code> 不被破坏</li>
+<li><code>x</code>的值没有被破坏（x的值被保存在了-0x24(%rbp)，没有被栈溢出攻击）</li>
+<li><code>rbp</code>中的值没有被破坏</li>
+<li>$\mathrm a[0]&#x3D;\mathrm{0x11220036}$</li>
+<li>$\mathrm a[1]&#x3D;\mathrm{0xaabbccdd}$</li>
+<li>buf&#x3D;01234567890123456</li>
+<li>当输入到第<strong>32</strong>个字符后无法从bar函数正常返回。</li>
+</ul>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="/angrychow-blog/tags/CSAPP/">CSAPP</a>
+      
+      </div>
+    
+    
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>angrychow</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog/2023/01/21/csapp-%E6%9F%90%E5%B9%B4%E6%9C%9F%E6%9C%AB-%E5%8F%82%E8%80%83/">https://angrychow.github.io/angrychow-blog/2023/01/21/csapp-%E6%9F%90%E5%B9%B4%E6%9C%9F%E6%9C%AB-%E5%8F%82%E8%80%83/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog">https://angrychow.github.io/angrychow-blog</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/angrychow-blog/2023/01/21/Tech%20Stack%20%E8%AE%B0%E5%BD%95/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>技术经历记录
+        </span>
+      </a>
+    
+    
+      <a href="/angrychow-blog/2023/01/21/Win32-GUI-%E7%BC%96%E7%A8%8B-%E5%90%88%E9%9B%86/" id="art-right" class="art-right">
+        <span class="prev-title">
+          Win32 GUI 编程初探合集<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nilaidawo" class="iconfont icon-zhihu" title="zhihu"></a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/angrychow" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2022 ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>History</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CSAPP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>GUI</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Opinion</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>History</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Tech Stack 记录/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>技术经历记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CSAPP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/csapp-某年期末-参考/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>CSAPP 复习用参考资料</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>GUI</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Win32-GUI-编程-合集/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>Win32 GUI 编程初探合集</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/23/GUI开发中的事件驱动机制/">
+            <time class="tagcloud-posttime">2023 / 01 / 23</time>
+            <span>GUI 开发中的事件驱动机制</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Opinion</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+            <time class="tagcloud-posttime">2023 / 05 / 31</time>
+            <span>由 ChatGPT 帮我写代码所想到的</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>短视频平台是怎样送你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/03/26/为什么我对程序员的未来感到悲观/">
+            <time class="tagcloud-posttime">2023 / 03 / 26</time>
+            <span>为什么我对应用层开发程序员的未来感到悲观</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/08/寻求增量：互联网公司的本能/">
+            <time class="tagcloud-posttime">2023 / 04 / 08</time>
+            <span>寻求增量：互联网公司的本能</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/16/摩西分海：数据库的红海中是否还存在一条坦途/">
+            <time class="tagcloud-posttime">2023 / 04 / 16</time>
+            <span>基础架构的红海中是否还存在一条坦途</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>是谁让你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+  <script></script>
+  <script src="/angrychow-blog/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/banderole.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>

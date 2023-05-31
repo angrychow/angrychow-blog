@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="/default-avatar.png">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="/default-avatar.png">
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/syuanpi/syuanpi.min.css">
+
+
+
+
+
+    <link rel="icon" href="/default-avatar.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title>
+  
+    归档 · angrychow 的博客
+  
+</title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/" id="article">
+        <span class="base-name">
+          
+            ARTICLE
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/archives" id="archives">
+        <span class="base-name">
+          
+            ARCHIVES
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="/angrychow-blog/" >
+            
+              ARTICLE
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="/angrychow-blog/archives" >
+            
+              ARCHIVES
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  <div class="archive syuanpi fadeInRightShort" id="archive">
+    
+      <aside class="archive-title">Total</aside>
+      <span class="archive-num">一共有 10 篇文章</span>
+    
+      
+      
+        
+          
+          
+            
+            
+            <div class="archive-group">
+            <time class="archive-year"> 2023 </time>
+            <div class="archive-list">
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <p>大二下接近尾声，诸多课设“开发”任务的 Deadline 也开始逼近。java OOP 课程要求写一个聊天系统，我负责写客户端部分。客户端用的是 java swing （一门也许比我年纪还大的技术）进行开发。我翻了翻 Oracle 提供的 java swing 文档 —— 不出意料，我几乎很难看懂上面写的每一个字。于是，我转向 ChatGPT 求助。一开始，我只是向 ChatGPT 问问具体类的成员方法的用处之类的；后来我渐渐发现，只要我输入的 Prompt 足够细致，我可以让 ChatGPT 直接帮我生成一个窗口出来。java OOP 课程还布置了十道需要在 Online Judge 上完成的编程题，ChatGPT 能够直接正确的回答其中的七道题，另外三道题在我稍稍调整后也通过了 Online Judge 的评判。</p>
+<p>就在昨天，我看见一位朋友写的数据结构课程设计的前端页面 —— 在我看来，写的挺像模像样的。本人身边的朋友多数不太喜欢做图形界面开发，所以我一直在“查找”身边的做过客户端或者前端开发的同学。经过一番交谈，我发现这位朋友的前端技术也是“速成”出来的 —— 这位朋友花了大约两个月的时间首先了解了 html，css，js 的一些大致开发功能，之后在 “B 站大学” 学习了一下 vue 框架的运作模式（为什么这些机构不愿意多录制一点 React 的教学视频？React 可比 vue 好学多了），最终，在 GPT 4 老师的帮助下，这位同学迅速形成了一套<strong>可行的，可用的，界面美观的前端页面</strong>。</p>
+<p>这使我感到有一些震惊，虽然我本人也是经常依赖 ChatGPT，可是我没想到 ChatGPT 竟然能使一位没有过前端开发经历的人在这么快的时间内做出来这么一套东西。回想起我第一次开发前端，一路上有无数的挫折……我现在还能想起来，2021 年 12 月，那时的我是多么困惑于 React 中的那个玄妙的“副作用”！（拜 B 站缺少 React Hook 的教学视频所赐！）</p>
+<p>在没有 GPT 的帮助的日子里，我大约花了半年的时间（2022.1 ~ 2022.7）才大概理解了前端开发的一些要点，并且可以自己写出一些功能没那么复杂的网页（还必须有厉害的人能在旁边提点我几句，不然遇到问题就卡壳了）。之后，我又花了半年时间（2022.9~2023.5），理解了 JavaScript 重要的一些语言特性（单线程异步，原型链等），大致了解了一些“大前端”的开发框架（例如 Electron，React Native），又实际上手做了一两个比较完备的前端项目 —— 到这时，我才大概能够独立的开发出一点可以用的前端页面和基于前端工具链的一些应用。</p>
+<p>而现在，有了 ChatGPT，前端开发变得更加的简单了，你都不需要对框架的细节有过多的掌控，你只需要大概的了解这个框架的核心概念（如果你不知道这些核心概念，那你就没办法写 Prompt 了，这个懒 ChatGPT 还暂时不能帮你偷），就可以役使 ChatGPT 帮你生成代码，你再调一调就可以把代码写出来了。<strong>ChatGPT，我想，他最大的好处就在于，他把我们从具体工程中的漫天文档中解救出来，让我们不用关心那么多繁冗的细节。</strong>在没有 ChatGPT 的时候，开发者形成对这些繁冗细节的良好理解力的最好的方式是积累开发的经验 —— 然而 ChatGPT 的出现正好让一个缺乏具体开发经验的人也能写出来一个不错的项目。</p>
+<p>在这篇短文里，我也不想发出类似于“前端已死！”这样的感叹 —— 一来我的资历仍然还是浅薄的很，并不支撑我做如此论断，二来天天呼喊“狼来了”也纯属庸人自扰，徒引人发笑耳。</p>
+<p>只是，ChatGPT 强大的功能，让我构想出第三次工业革命时期的一个画面：<strong>一位原本自得于娴熟操纵复杂机械的工人，看着一台袖珍的计算机用密密麻麻的电线向机械以一秒钟上万次的频率控制着机器，心中暗忖自己这几十年的“技术”算是白干了。</strong></p>
+
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-05-31
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+              由 ChatGPT 帮我写代码所想到的
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="是谁让你去淄博吃烧烤的？"><a href="#是谁让你去淄博吃烧烤的？" class="headerlink" title="是谁让你去淄博吃烧烤的？"></a>是谁让你去淄博吃烧烤的？</h2><p>你打开手机，习惯性的点开了抖音，开始刷起短视频。不知为何，这几天你总是刷到有关淄博烧烤的内容。短视频里，烤串上晶莹的油脂随着炭火的高温融化开来，似乎正隔着屏幕挑动着你的味蕾；网红们将账单怼到镜头前，让你惊呼原来吃一顿烧烤竟然只用花这点钱。你又想起即将到来的五一节——择日不如撞日，干脆五一节去淄博吃烧烤吧。</p>
+<p>很显然，淄博烧烤的爆红并不是偶然，而是有关部门联合短视频平台（抖音、快手等）反复营销后带来的必然的结果。从薛之谦在淄博吃烧烤，到哔哩哔哩策划的《人生一串》纪录片拍摄淄博烧烤，再到抖音众网红开始集中在短视频平台上发布淄博烧烤的爆款视频，都是这个营销策略的一部分。</p>
+<h3 id="互联网公司的业务扩张：政府文旅行业解决方案"><a href="#互联网公司的业务扩张：政府文旅行业解决方案" class="headerlink" title="互联网公司的业务扩张：政府文旅行业解决方案"></a>互联网公司的业务扩张：政府文旅行业解决方案</h3><p>随着我国新冠疫情管控政策的逐步放开，各地的出行政策也渐渐开始调整回疫情开始前的模式，我们也将找回“失去的旅行”。春江水暖鸭先知，资本家们对政策的变动最为敏感。旅游业复苏在即，字节跳动也想要在旅游业的复苏中分一杯羹。字节跳动如何从旅游业中取得利润？这首先要从这家公司推出的“火山引擎”说起。</p>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-05-02
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/05/02/zibo-tourism/">
+              是谁让你去淄博吃烧烤的？
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="短视频平台是怎样送你去淄博吃烧烤的？"><a href="#短视频平台是怎样送你去淄博吃烧烤的？" class="headerlink" title="短视频平台是怎样送你去淄博吃烧烤的？"></a>短视频平台是怎样送你去淄博吃烧烤的？</h2><p>你打开手机，习惯性的点开了抖音，开始刷起短视频。不知为何，这几天你总是刷到有关淄博烧烤的内容。短视频里，烤串上晶莹的油脂随着炭火的高温融化开来，似乎正隔着屏幕挑动着你的味蕾；网红们将账单怼到镜头前，让你惊呼原来吃一顿烧烤竟然只用花这点钱。你又想起即将到来的五一节——择日不如撞日，干脆五一节去淄博吃烧烤吧。</p>
+<p>很显然，淄博烧烤的爆红并不是偶然，而是有关部门联合短视频平台（抖音、快手等）反复营销后带来的必然的结果。从薛之谦在淄博吃烧烤，到哔哩哔哩策划的《人生一串》纪录片拍摄淄博烧烤，再到抖音众网红开始集中在短视频平台上发布淄博烧烤的爆款视频，都是这个营销策略的一部分。</p>
+<h3 id="互联网公司的业务扩张：政府文旅行业解决方案"><a href="#互联网公司的业务扩张：政府文旅行业解决方案" class="headerlink" title="互联网公司的业务扩张：政府文旅行业解决方案"></a>互联网公司的业务扩张：政府文旅行业解决方案</h3><p>随着我国新冠疫情管控政策的逐步放开，各地的出行政策也渐渐开始调整回疫情开始前的模式，我们也将找回“失去的旅行”。春江水暖鸭先知，资本家们对政策的变动最为敏感。旅游业复苏在即，字节跳动也想要在旅游业的复苏中分一杯羹。字节跳动如何从旅游业中取得利润？这首先要从这家公司推出的“火山引擎”说起。</p>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-05-02
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+              短视频平台是怎样送你去淄博吃烧烤的？
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <p><em>本文内容为与两位学长聚餐时的聊天内容的整合</em></p>
+<h2 id="基础架构的红海中是否还存在一条坦途"><a href="#基础架构的红海中是否还存在一条坦途" class="headerlink" title="基础架构的红海中是否还存在一条坦途"></a>基础架构的红海中是否还存在一条坦途</h2><h3 id="新的数据库范式"><a href="#新的数据库范式" class="headerlink" title="新的数据库范式"></a>新的数据库范式</h3><p>2008 年，Oracle 公司收购了 MySQL 公司。在这一天，也许很多人会认为关系型数据库的技术架构发展历程已经走向了尽头，剩下的都是对现有模型的小修小补。但是互联网公司的快速崛起使得传统的单节点关系型数据库显得有些过时。从数据库层面来看，互联网公司的业务相较于其他行业的业务有以下两个特点：</p>
+<ul>
+<li>互联网公司每时每刻都在接收和处理大量的数据，他们要提供的服务需要分布式来减轻单台主机的负载，提高可用性。</li>
+<li>互联网公司对于每天所产生的大量用户数据非常感兴趣——他们希望能够在线分析用户数据（跑模型，分析用户偏好等），然后将分析的结果用于优化推送结果等。</li>
+</ul>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-04-16
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/04/16/%E6%91%A9%E8%A5%BF%E5%88%86%E6%B5%B7%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BA%A2%E6%B5%B7%E4%B8%AD%E6%98%AF%E5%90%A6%E8%BF%98%E5%AD%98%E5%9C%A8%E4%B8%80%E6%9D%A1%E5%9D%A6%E9%80%94/">
+              基础架构的红海中是否还存在一条坦途
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="寻求增量：互联网公司的本能"><a href="#寻求增量：互联网公司的本能" class="headerlink" title="寻求增量：互联网公司的本能"></a>寻求增量：互联网公司的本能</h2><p><strong>对于互联网公司来说，不进则退，他们总是有让自己不断扩张的趋势——这是股东、投资者逐利、希望看到公司市值上升的心理所导致的。</strong></p>
+<p><em>笔者按：笔者同一位正在一家名为“八比特跳动”的互联网公司上班的学长聚餐，聚餐时聊到了以下内容。</em></p>
+<p>笔者：学长，最近“八比特跳动”的校招情况如何？我听说最近互联网公司的行情都非常不好，Head Count（职位空缺）也非常的少。具体到“八比特跳动”是什么情况呢？</p>
+<p>学长：你错啦，“八比特跳动”去年营收了 800 多亿美元，总的来说“八比特跳动”这家公司目前的经营状况还是非常好。目前公司确实裁人裁不少，但是首先裁员是看部门的，你比如最近飞书就裁员裁的非常狠。你知道吗？飞书这一个产品，一共有八千个人在做，这是不是有点过分了。整个推特一共也就八千来人吧，飞书这个项目很明显有人员冗余。</p>
+<p>笔者：我听说飞书最近在做商业化，我自己在使用飞书的时候也有这样的体验，原先免费的功能现在付费了。这有助于缓解飞书裁员的现状吗？</p>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-04-08
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/04/08/%E5%AF%BB%E6%B1%82%E5%A2%9E%E9%87%8F%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E7%9A%84%E6%9C%AC%E8%83%BD/">
+              寻求增量：互联网公司的本能
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="为什么我对应用层开发程序员的未来感到悲观"><a href="#为什么我对应用层开发程序员的未来感到悲观" class="headerlink" title="为什么我对应用层开发程序员的未来感到悲观"></a>为什么我对应用层开发程序员的未来感到悲观</h2><h3 id="互联网企业的“去肥增瘦”"><a href="#互联网企业的“去肥增瘦”" class="headerlink" title="互联网企业的“去肥增瘦”"></a>互联网企业的“去肥增瘦”</h3><p>关注就业情况的应届毕业生们和大厂的员工们一定能够感到 2023 年互联网就业市场的萧条。以字节跳动为例，其于 2022 年的下半年就提出了“去肥增瘦”的口号。所谓“去肥增瘦”，就是企业管理中降本增效的同义词。</p>
+<p>“互联网公司”是一个诞生仅十余年的概念，但是在各色“职业经理人”的出色规划之下，各大互联网公司已经几乎快要将整个市场瓜分干净了。再加之目前经济状况下行，互联网公司连裁员都来不及，新添的业务也肯定优先考虑来自其他被解散的业务组的“活水”，应届大学生找到工作，只能是难上加难。</p>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-03-26
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/03/26/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%9C%AA%E6%9D%A5%E6%84%9F%E5%88%B0%E6%82%B2%E8%A7%82/">
+              为什么我对应用层开发程序员的未来感到悲观
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h1 id="GUI-开发中的事件驱动机制"><a href="#GUI-开发中的事件驱动机制" class="headerlink" title="GUI 开发中的事件驱动机制"></a>GUI 开发中的事件驱动机制</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>很显然，您手头正在使用的计算机允许你同时运行好几个应用程序，这归功于您手头正在使用的计算机的操作系统支持“并发”（concurrency）。多个应用程序被抽象为多个进程，然后由操作系统来调度这多个进程。每个进程会被操作系统分配一个时间片，即每次被 CPU 选中来执行当前进程所用的时间。由于 CPU 的频率太高，进程之间的切换并不会让用户感到卡顿，所以给人一种“几个应用程序同时在运行”的感觉。</p>
+<p>一个进程可以拥有多个线程（Thread），不同的线程完成不同的任务，一个进程中线程之间的调度同样也是分配时间片、切换线程的模式。</p>
+<p>值得强调的是，进程与线程的<strong>调度</strong>是由操作系统进行的。</p>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-01-23
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/">
+              GUI 开发中的事件驱动机制
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h1 id="个人记录"><a href="#个人记录" class="headerlink" title="个人记录"></a>个人记录</h1><h2 id="2021-年-7月-9月"><a href="#2021-年-7月-9月" class="headerlink" title="2021 年 7月 - 9月"></a>2021 年 7月 - 9月</h2><h3 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h3><ul>
+<li>JAVA 程序设计复习</li>
+<li>JAVA GUI，java.awt 与 java.swing 学习<ul>
+<li>小项目：五子棋</li>
+<li>JAVA 写 GUI 真屎</li>
+</ul>
+</li>
+</ul>
+<h3 id="BUPTCPC-第一年-with-ZYM-amp-XKD"><a href="#BUPTCPC-第一年-with-ZYM-amp-XKD" class="headerlink" title="BUPTCPC - 第一年 with ZYM &amp; XKD"></a>BUPTCPC - 第一年 with ZYM &amp; XKD</h3><ul>
+<li>校赛准备<ul>
+<li>结果：决赛铁牌（😅）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Servlet-技术初探"><a href="#Servlet-技术初探" class="headerlink" title="Servlet 技术初探"></a>Servlet 技术初探</h3><ul>
+<li>java - servlet技术 - tomcat<ul>
+<li>小项目：作业记录CRUD，部署在别人（ZCW）的服务器上</li>
+</ul>
+</li>
+</ul>
+<h2 id="2021-年-10月-11月"><a href="#2021-年-10月-11月" class="headerlink" title="2021 年 10月 - 11月"></a>2021 年 10月 - 11月</h2><h3 id="SSM-框架初探"><a href="#SSM-框架初探" class="headerlink" title="SSM 框架初探"></a>SSM 框架初探</h3><ul>
+<li>字节跳动，后端开发训练营<ul>
+<li>项目：具有安全防护功能的账号系统</li>
+</ul>
+</li>
+</ul>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-01-21
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/01/21/Tech%20Stack%20%E8%AE%B0%E5%BD%95/">
+              技术经历记录
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h1 id="CSAPP-期末复习"><a href="#CSAPP-期末复习" class="headerlink" title="CSAPP 期末复习"></a>CSAPP 期末复习</h1><h2 id="CSAPP-某年期末"><a href="#CSAPP-某年期末" class="headerlink" title="CSAPP 某年期末"></a>CSAPP 某年期末</h2><h3 id="判断题-2pts-8-x3D-16pts"><a href="#判断题-2pts-8-x3D-16pts" class="headerlink" title="判断题 2pts * 8&#x3D;16pts"></a>判断题 2pts * 8&#x3D;16pts</h3><p>1-1 <code>(x|-x)&gt;&gt;31 == -1</code> x 的类型是 int</p>
+<p>1-2 UNIX 系统中，文件就是字节序列，每个I&#x2F;O设备都可以看成文件。</p>
+<p>1-3 <code>-1 &lt; 0U</code></p>
+<p>1-4 <code>cmpq (%rax), 6(%rsp)</code></p>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-01-21
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/01/21/csapp-%E6%9F%90%E5%B9%B4%E6%9C%9F%E6%9C%AB-%E5%8F%82%E8%80%83/">
+              CSAPP 复习用参考资料
+            </a>
+          </div>
+        </div>
+      
+        
+          
+          
+          
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="Win32-GUI-编程-1-1-intro"><a href="#Win32-GUI-编程-1-1-intro" class="headerlink" title="Win32 GUI 编程 1.1 intro"></a>Win32 GUI 编程 1.1 intro</h2><h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><ul>
+<li>了解什么是回调函数</li>
+<li>了解句柄概念</li>
+</ul>
+<h3 id="窗口创建的过程"><a href="#窗口创建的过程" class="headerlink" title="窗口创建的过程"></a>窗口创建的过程</h3><ul>
+<li>定义 WinMain 函数</li>
+<li>定义窗口处理函数（自定义，消息处理回调）</li>
+<li>向操作系统注册窗口类（向操作系统写入数据）</li>
+<li>创建窗口（内存中创建窗口）</li>
+<li>显示窗口（绘制窗口）</li>
+<li>消息循环（获取、翻译、分发消息）</li>
+<li>消息处理</li>
+</ul>
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2023-01-21
+            </time>
+            <a  class="archive-post-link" href="/angrychow-blog/2023/01/21/Win32-GUI-%E7%BC%96%E7%A8%8B-%E5%90%88%E9%9B%86/">
+              Win32 GUI 编程初探合集
+            </a>
+          </div>
+        </div>
+      
+      
+        </section></section>
+      
+  </div>
+  
+  <nav class="pagination">
+      <span class="page-number current">1</span>
+  </nav>
+
+
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nilaidawo" class="iconfont icon-zhihu" title="zhihu"></a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/angrychow" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2022 ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>History</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CSAPP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>GUI</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Opinion</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>History</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Tech Stack 记录/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>技术经历记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CSAPP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/csapp-某年期末-参考/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>CSAPP 复习用参考资料</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>GUI</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Win32-GUI-编程-合集/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>Win32 GUI 编程初探合集</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/23/GUI开发中的事件驱动机制/">
+            <time class="tagcloud-posttime">2023 / 01 / 23</time>
+            <span>GUI 开发中的事件驱动机制</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Opinion</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+            <time class="tagcloud-posttime">2023 / 05 / 31</time>
+            <span>由 ChatGPT 帮我写代码所想到的</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>短视频平台是怎样送你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/03/26/为什么我对程序员的未来感到悲观/">
+            <time class="tagcloud-posttime">2023 / 03 / 26</time>
+            <span>为什么我对应用层开发程序员的未来感到悲观</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/08/寻求增量：互联网公司的本能/">
+            <time class="tagcloud-posttime">2023 / 04 / 08</time>
+            <span>寻求增量：互联网公司的本能</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/16/摩西分海：数据库的红海中是否还存在一条坦途/">
+            <time class="tagcloud-posttime">2023 / 04 / 16</time>
+            <span>基础架构的红海中是否还存在一条坦途</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>是谁让你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+  <script></script>
+  <script src="/angrychow-blog/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/banderole.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+
+
+</body>
+</html>

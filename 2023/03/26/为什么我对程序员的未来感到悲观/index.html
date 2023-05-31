@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="angrychow 的博客">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name= "format-detection" content="telephone=no" />
+
+  <link rel="apple-touch-icon"  sizes="72x72"  href="/default-avatar.png">
+  <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="/default-avatar.png">
+
+
+
+  <meta name="description" content="代码技术杂谈">
+
+
+
+  <meta name="keywords" content="Opinion, nlvi" />
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+
+<link rel="stylesheet" href="/angrychow-blog/style/style.css">
+
+<script>
+  var nlviconfig = {
+    title: "angrychow 的博客",
+    author: "angrychow",
+    baseUrl: "/angrychow-blog/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: false,
+      lazy: false,
+      toc: false
+    }
+  }
+</script>
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+
+    
+<link rel="stylesheet" href="/angrychow-blog/syuanpi/syuanpi.min.css">
+
+
+
+
+
+    <link rel="icon" href="/default-avatar.png">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/angrychow-blog/font/allura/allura.ttf');
+}
+</style>
+
+  <title> 为什么我对应用层开发程序员的未来感到悲观 · angrychow 的博客 </title>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/angrychow-blog/atom.xml" title="angrychow 的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn" style="display:none;">
+    <h1><a href="/angrychow-blog/">angrychow 的博客</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/" id="article">
+        <span class="base-name">
+          
+            ARTICLE
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="/angrychow-blog/archives" id="archives">
+        <span class="base-name">
+          
+            ARCHIVES
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">angrychow 的博客</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="/angrychow-blog/" >
+            
+              ARTICLE
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="/angrychow-blog/archives" >
+            
+              ARCHIVES
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2023-03-26</time>
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
+        
+          为什么我对应用层开发程序员的未来感到悲观
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h2 id="为什么我对应用层开发程序员的未来感到悲观"><a href="#为什么我对应用层开发程序员的未来感到悲观" class="headerlink" title="为什么我对应用层开发程序员的未来感到悲观"></a>为什么我对应用层开发程序员的未来感到悲观</h2><h3 id="互联网企业的“去肥增瘦”"><a href="#互联网企业的“去肥增瘦”" class="headerlink" title="互联网企业的“去肥增瘦”"></a>互联网企业的“去肥增瘦”</h3><p>关注就业情况的应届毕业生们和大厂的员工们一定能够感到 2023 年互联网就业市场的萧条。以字节跳动为例，其于 2022 年的下半年就提出了“去肥增瘦”的口号。所谓“去肥增瘦”，就是企业管理中降本增效的同义词。</p>
+<p>“互联网公司”是一个诞生仅十余年的概念，但是在各色“职业经理人”的出色规划之下，各大互联网公司已经几乎快要将整个市场瓜分干净了。再加之目前经济状况下行，互联网公司连裁员都来不及，新添的业务也肯定优先考虑来自其他被解散的业务组的“活水”，应届大学生找到工作，只能是难上加难。</p>
+<span id="more"></span>
+
+<p>更要命的是，许多行业龙头运营到现在，仍然处于亏损的状态。根据 2022 年的公司财报，美团、滴滴、快手、哔哩哔哩等公司（以上公司均是该领域的龙头企业）在当年均亏损了上百亿。一般认为互联网公司初期的时候需要大量“烧钱”以迅速扩张占领市场，等公司发展的足够庞大、市场占有率足够高的时候便能实现盈利。但是美团等公司的财报表明了一个事实：一家互联网公司即便已经“占领”了市场，这也不意味着它就能完成盈利。</p>
+<p>一家公司不能一直依赖投资银行的输血活下去。但现实是，许多互联网公司到目前都没有实现扭亏为盈。我周围的很多热衷于股票交易的朋友喜欢嘲笑茅台的“酱香科技”：背后的一层含义是茅台公司的市值如此之高，完全是因为投资经理人们“抱团”、炒高茅台的股票价格，营造虚构的市值繁荣。但是，至少茅台迄今为止仍然在盈利，中国大大小小的饭局上总是有茅台酒的出现。然而中国的一些龙头互联网公司迄今为止仍然不能实现盈利，与此同时互联网行业的寒冬却又接踵而至。换句话说 —— 互联网公司的泡沫（或者说“水分”）太多了。</p>
+<p>覆巢之下，焉有完卵。作为互联网公司的流水线工人，应用层开发的程序员们在互联网行业的寒冬之下是很难有好日子过的。</p>
+<h3 id="技术奇点：AI-会大大降低应用层开发的门栏"><a href="#技术奇点：AI-会大大降低应用层开发的门栏" class="headerlink" title="技术奇点：AI 会大大降低应用层开发的门栏"></a>技术奇点：AI 会大大降低应用层开发的门栏</h3><p>软件技术分两类，第一类软件技术优化成品，第二类技术减轻程序员的心智负担。稍有关注 AI 技术前沿的朋友们都会知道 copilot 和 ChatGPT 这两项技术（这都是微软系的产品）。如果你安装了 copilot 插件，那么你只需要在编辑器中输入注释，copilot 就会按照注释为你补全你想要的代码。而ChatGPT 现目前还没有达到“用户输入需求，ChatGPT 生成一大段满足用户需求的可以运行的代码”的能力，但是经过笔者自己的体验，拿 ChatGPT 问问相关技术的 API 接口的使用方式已然是绰绰有余。</p>
+<p>如果说前些年的技术 —— 例如 JAVA 的 Spring 框架，React 的函数式编程范式还需要应用层开发的程序员学习相关概念和熟悉代码编写的基本逻辑，那么 AI 的发展将很可能会让应用层程序员免去大量的业务代码的编写时间（大多数应用层程序员做的其实就是调用接口而已）。</p>
+<p>重复劳动的自动化的结果就是行业需求快速萎缩。如果原先需要五个小时才能完成的需求现在在 AI 的辅助下只需要一个小时就能完成的话，那么五个人的业务组就会被“优化”为一个人。毕竟，只需要一个人就可以完成所有的工作。</p>
+<p>况且我在上一节提到，互联网公司现在日子很不好过，需要节省成本。又很不恰好的是 AI 技术“赋能”程序员，提高了个体应用层开发程序员的开发效率。那么此时，原先是业务线的“瘦肉”的应用层开发程序员就会摇身一变成为“肥肉”，被互联网公司用切五花肉的大菜刀迅速去除，哈哈！</p>
+<h3 id="未来：应用层开发程序员会计化"><a href="#未来：应用层开发程序员会计化" class="headerlink" title="未来：应用层开发程序员会计化"></a>未来：应用层开发程序员会计化</h3><p>笔者的父母就是金融从业者，我也从他们口中听到了许多关于会计行业发展的故事。恰巧，前几天我在知乎上看到一篇回答，以飨读者：</p>
+<p>作者：郑天玑<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/569408745/answer/2917813818">https://www.zhihu.com/question/569408745/answer/2917813818</a><br>来源：知乎（有删节）</p>
+<p>“现在画师的挣扎就像信息化前夜的老财（<em>文中老财均指代财会</em>）。当年老财也很自信认为自己不会被淘汰，觉得人为会计判断是艺术，多么牛逼，然而时代大浪滚滚，现实中所谓的淘汰往往不是直接行为，而大多数以业务模块化流水线化、岗位缩减等间接形式表现。</p>
+<p>比如以前多成立一家公司就要多配备一个出纳一个会计，而财税整体信息化后可以集中管理，5个人可以管理100家，记账公司疯狂内卷甚至一个人管理50家，原本一家40亿规模的大型制造企业需要20人以上老财，现在已经可以压倒10人不到，甚至部门业务开始直接不招人采取外包模式，你说这是直接淘汰吗？</p>
+<p>同比现在的业务量信息化前后老财需求减少了之前70%，而老财学生年年毕业年年增长涌入市场，<strong>如果不是靠经济整体高速增长往上走，根本消化不了那么多就业人群，经济危机一来整个老财行业薪资会被无限压低</strong>，可以预见的未来是AI会逐渐蚕食这个行业原本所谓的高端市场，到时候从上到下的垂直打击下，老财行业会彻底消亡。</p>
+<p>这就是所有的故事，不要老拿大触来对标自己，你只是市场普通的一员，AI 只要能替换很低层次的商业需求就足够把大部分岗位消灭，市场干涸之时你连成长大触的机会都没有。”</p>
+<p><em>我对应用层开发者的前途的悲观情绪，都凝结在此文中了。</em></p>
+<p>无论前路如何，笔者仍然祝各位开发者们前途无忧，(老婆|老公)孩子热炕头，不会被去肥增瘦，开心过好每一天✌</p>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="/angrychow-blog/tags/Opinion/">Opinion</a>
+      
+      </div>
+    
+    
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span>angrychow</span>
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog/2023/03/26/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%9C%AA%E6%9D%A5%E6%84%9F%E5%88%B0%E6%82%B2%E8%A7%82/">https://angrychow.github.io/angrychow-blog/2023/03/26/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%9C%AA%E6%9D%A5%E6%84%9F%E5%88%B0%E6%82%B2%E8%A7%82/</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://angrychow.github.io/angrychow-blog">https://angrychow.github.io/angrychow-blog</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/angrychow-blog/2023/04/08/%E5%AF%BB%E6%B1%82%E5%A2%9E%E9%87%8F%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E7%9A%84%E6%9C%AC%E8%83%BD/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>寻求增量：互联网公司的本能
+        </span>
+      </a>
+    
+    
+      <a href="/angrychow-blog/2023/01/23/GUI%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9C%BA%E5%88%B6/" id="art-right" class="art-right">
+        <span class="prev-title">
+          GUI 开发中的事件驱动机制<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nilaidawo" class="iconfont icon-zhihu" title="zhihu"></a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/angrychow" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2022 ~ 2023</span>
+        <span>❤</span>
+        <span>angrychow</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a target="_blank" rel="noopener" href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>History</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CSAPP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>GUI</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Opinion</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>History</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Tech Stack 记录/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>技术经历记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CSAPP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/csapp-某年期末-参考/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>CSAPP 复习用参考资料</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>GUI</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/21/Win32-GUI-编程-合集/">
+            <time class="tagcloud-posttime">2023 / 01 / 21</time>
+            <span>Win32 GUI 编程初探合集</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/01/23/GUI开发中的事件驱动机制/">
+            <time class="tagcloud-posttime">2023 / 01 / 23</time>
+            <span>GUI 开发中的事件驱动机制</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Opinion</h2>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/31/endless-industrial-revolution/">
+            <time class="tagcloud-posttime">2023 / 05 / 31</time>
+            <span>由 ChatGPT 帮我写代码所想到的</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism-censored-edition/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>短视频平台是怎样送你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/03/26/为什么我对程序员的未来感到悲观/">
+            <time class="tagcloud-posttime">2023 / 03 / 26</time>
+            <span>为什么我对应用层开发程序员的未来感到悲观</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/08/寻求增量：互联网公司的本能/">
+            <time class="tagcloud-posttime">2023 / 04 / 08</time>
+            <span>寻求增量：互联网公司的本能</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/04/16/摩西分海：数据库的红海中是否还存在一条坦途/">
+            <time class="tagcloud-posttime">2023 / 04 / 16</time>
+            <span>基础架构的红海中是否还存在一条坦途</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="/angrychow-blog/2023/05/02/zibo-tourism/">
+            <time class="tagcloud-posttime">2023 / 05 / 02</time>
+            <span>是谁让你去淄博吃烧烤的？</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+
+  <script></script>
+  <script src="/angrychow-blog/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/angrychow-blog/script/scheme/banderole.js"></script>
+
+
+
+
+<script src="/angrychow-blog/script/bootstarp.js"></script>
+
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>
