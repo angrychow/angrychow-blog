@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://angrychow.github.io/angrychow-blog/2024/07/23/math/</loc>
+    
+    <lastmod>2024-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://angrychow.github.io/angrychow-blog/2023/10/10/talks-01/</loc>
     
     <lastmod>2023-10-10</lastmod>
@@ -130,7 +139,7 @@
 
   <url>
     <loc>https://angrychow.github.io/angrychow-blog</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,28 +147,28 @@
   
   <url>
     <loc>https://angrychow.github.io/angrychow-blog/tags/History/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://angrychow.github.io/angrychow-blog/tags/CSAPP/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://angrychow.github.io/angrychow-blog/tags/GUI/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://angrychow.github.io/angrychow-blog/tags/Opinion/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
