@@ -18,3 +18,4 @@ https://angrychow.github.io/angrychow-blog/tags/History/
 https://angrychow.github.io/angrychow-blog/tags/CSAPP/
 https://angrychow.github.io/angrychow-blog/tags/GUI/
 https://angrychow.github.io/angrychow-blog/tags/Opinion/
+https://angrychow.github.io/angrychow-blog/tags/Math/

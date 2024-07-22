@@ -173,6 +173,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://angrychow.github.io/angrychow-blog/tags/Math/</loc>
+    <lastmod>2024-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
 </urlset>
